@@ -64,10 +64,84 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-函数对象，Date" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/12/06/hello-world/" class="article-date">
-  <time datetime="2021-12-06T03:47:51.960Z" itemprop="datePublished">2021-12-06</time>
+    <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" class="article-date">
+  <time datetime="2021-12-06T03:39:05.561Z" itemprop="datePublished">2021-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="函数对象"><a href="#函数对象" class="headerlink" title="函数对象"></a>函数对象</h1><p>函数的方法：call和apply都是函数的方法，需要通过函数对象来调用，括号里对象（第一个参数）成为this的源对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">name = <span class="number">3</span>;</span><br><span class="line">obj = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line">fun();<span class="comment">//显示3,this指向window </span></span><br><span class="line">														</span><br><span class="line">fun(obj);<span class="comment">//显示3，this指向window</span></span><br><span class="line"></span><br><span class="line">fun.call(obj);<span class="comment">//显示Jack，this指向obj</span></span><br><span class="line"></span><br><span class="line">fun.apply(obj);<span class="comment">//显示Jack，this指向obj</span></span><br><span class="line"></span><br><span class="line">fun.call(obj,a,b);<span class="comment">//obj为对象，a和b为实参，可以添加在call内依次传递</span></span><br><span class="line"></span><br><span class="line">fun.apply(obj,[a,b]);<span class="comment">//obj为对象，实参必须封装在一个数组中传递，⚠️这就是唯一的区别⚠️</span></span><br><span class="line"></span><br><span class="line">注意注意注意⚠️！！！！</span><br><span class="line"><span class="comment">//⚠️以函数形式调用时，this永远指向的是window</span></span><br><span class="line"><span class="comment">//⚠️以构造函数调用时，this指向的是信创建的对象</span></span><br><span class="line"><span class="comment">//⚠️以方法的形式调用时，指向调用方法的对象</span></span><br><span class="line"><span class="comment">//⚠️使用call和apply调用时this指定的对象为其所传递的对象</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//调用函数时，浏览器都会传递进两个隐含的参数：this 和 arguments（封装实参的对象）类数组对象，可以通过索引来操作数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h1><p>创建一个date对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;3/1/2002 12:00:00&quot;</span>);<span class="comment">//用字符串设置一个指定时间</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//会输出当前的时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//日期格式 月/日/年 具体时间</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Date对象的方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">a.getDate();<span class="comment">//获取a的 日  返回1～31</span></span><br><span class="line"></span><br><span class="line">a.getDay();<span class="comment">//返回0～6，0是周日</span></span><br><span class="line"></span><br><span class="line">a.getMonth();<span class="comment">//返回0～11，表月份，0为1月，11为12月</span></span><br><span class="line"></span><br><span class="line">a.getFullYear();<span class="comment">//获取年份</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" data-id="ckwu5q82j000jbgdx9hvwazvx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-数组" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/12/05/%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2021-12-05T02:29:12.412Z" itemprop="datePublished">2021-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><p>数组采用数字作为索引对象</p>
+<p>构建方法及使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();<span class="comment">//构造函数创建，()内可以添加元素也可不加</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [];<span class="comment">//字面量来创建</span></span><br><span class="line"></span><br><span class="line">arr[索引值] = 值;<span class="comment">//向数组中添加元素</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.length);<span class="comment">//输出数组的长度，⚠️连续的可以这样写，非连续测出最大索引+1</span></span><br><span class="line"></span><br><span class="line">arr.length = <span class="number">4</span>;<span class="comment">//可以设置length来设置数组长度，大于数组则会添加空元素，小于数组长度则会删除元素</span></span><br><span class="line"></span><br><span class="line">arr[arr.length] = ...;<span class="comment">//可以向数组末尾添加元素⚠️</span></span><br><span class="line"></span><br><span class="line">arr = [<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;];<span class="comment">//在数组里创建函数</span></span><br><span class="line">                               </span><br><span class="line">arr[<span class="number">0</span>]();<span class="comment">//调用函数，注意加括号⚠️</span></span><br><span class="line">                                  </span><br><span class="line">arr.pop();<span class="comment">//删除末尾元素并返回被删除元素</span></span><br><span class="line">                                  </span><br><span class="line">arr.shift();<span class="comment">//删除并返回第一个元素                                  </span></span><br><span class="line">                                 </span><br><span class="line">arr.push( 元素 );<span class="comment">//向末尾添加一个或多个元素，并返回长度</span></span><br><span class="line">                                  </span><br><span class="line">arr.unshift( 元素 );<span class="comment">//向数组开头添加一个或多个元素，并返回长度   </span></span><br><span class="line">                            </span><br><span class="line">arr.slice(a,b);<span class="comment">//从数组中提取指定元素，需要两个参数，开始元素和结束元素的索引，包含开头但不包含结尾，不会改变原数组⚠️  </span></span><br><span class="line">            <span class="comment">//结尾参数还可以是负值，-n表示倒数第n个⚠️</span></span><br><span class="line">                                  </span><br><span class="line">arr.splice(a,b,c...);<span class="comment">//从数组中删除元素，会影响原数组，返回删除的元素⚠️     </span></span><br><span class="line">                		 <span class="comment">//第一个参数为开始索引，第二个参数表示删除数量 ⚠️ </span></span><br><span class="line">                     <span class="comment">//第三个参数会加载在被删除的位置，替换之前的元素</span></span><br><span class="line">                                  </span><br><span class="line">arr.concat(arr2);<span class="comment">//连接两个数组，不会对原数组产生影响</span></span><br><span class="line">                                  </span><br><span class="line">arr.join(a);<span class="comment">//将数组转换为字符串，中间的参数被设置为连接符，在元素之间添加输出字符串，不会对原数组产生影响</span></span><br><span class="line">                                  </span><br><span class="line">arr.reverse();<span class="comment">//颠倒数组，会对原数组产生影响                                </span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>数组的遍历方法：可以用for循环，还可以用forEach()来操作,forEach需要一个函数作为参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span> <span class="title">fum</span>(<span class="params">value,index,object</span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);<span class="comment">//数组中有几个元素就会执行几次,每次执行时浏览器会传递三个参数给函数</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(value);<span class="comment">//第一个参数是元素的值</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(index);<span class="comment">//第二个参数是元素的索引</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(object);<span class="comment">//第三个参数是正在遍历的数组</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/05/%E6%95%B0%E7%BB%84/" data-id="ckwu5q82l000lbgdxa797ezna" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS3动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
 </a>
     
   </div>
@@ -78,7 +152,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/06/hello-world/">Hello World</a>
+      <a class="article-title" href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
     </h1>
   
 
@@ -86,26 +160,1133 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h1 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h1><ol>
+<li><p>盒子的变形</p>
+<ul>
+<li><p>transform:translate(x,y)</p>
+</li>
+<li><p>或者把tranlate换成translateX （只在x方向做变换）translateY（只在y方向做变换）</p>
+</li>
+<li><p>transform:scale(x,y) x 方向变换x倍数  y方向变换y倍数x  缩放效果</p>
+</li>
+<li><p>scale（a）只带一个参数代表x，y都缩放a倍 还有scaleX scaleY</p>
+</li>
+<li><p>Transform:rotate(30deg)旋转30度</p>
+</li>
+<li><p>transform：skew(x-deg,y-deg)</p>
+</li>
+<li><p>transform:matrix(a,b,c,d,e,f)</p>
+<p>a    c    e</p>
+<p>b    d    f</p>
+<p>0    0    1</p>
+<p>a,d表示缩放（如果没有缩放，值设为1），b,c表示扭曲（如果没有扭曲，值为0）</p>
+<p>e,f表示位移（如果没有位移，值为0）</p>
+</li>
+<li><p>tranform-origin：（x，y）设置旋转基点</p>
+</li>
+<li><p>perspective  让子元素获得透视效果 主流浏览器都不支持，谷歌要加webkit，或者在长度后加单位</p>
+</li>
+<li><p>transform-style：flat/preserve-3d  规定如何在3D空间中呈现被嵌套的元素，必须与transform 属性一同使用 加在父元素标签内</p>
+</li>
+</ul>
+<ul>
+<li>rotateZ  rotateX rotateY</li>
+</ul>
+</li>
+</ol>
+<h1 id="CSS3过渡动画"><a href="#CSS3过渡动画" class="headerlink" title="CSS3过渡动画"></a>CSS3过渡动画</h1><ul>
+<li><p>transition-property</p>
+</li>
+<li><p>Transition-duration</p>
+</li>
+<li><p>Transition-timing-function</p>
+</li>
+<li><p>Transition-delay</p>
+</li>
+<li><p>Transition:可以使用属性：</p>
+<ul>
+<li><p>颜色：color background-color border-color outline-color</p>
+</li>
+<li><p>位置：background-position left right top bottom</p>
+</li>
+<li><p>长度：max-height min-height max-width min-width height width</p>
+<p>Border-width line-height text-indent vertical-align border-spacing</p>
+<p>Letter-spacing word-spacing</p>
+</li>
+<li><p>数字：opacity visibility z-index font-weight zoom </p>
+</li>
+<li><p>组合：text-shadow transform box-shadow clip</p>
+</li>
+<li><p>渐变:gradient</p>
+</li>
+</ul>
+</li>
+<li><p>Duration 动画持续时间：一般以秒或毫秒为单位s/ms</p>
+</li>
+<li><p>timing-function：动画函数 </p>
+<ul>
+<li><p>linear：匀速</p>
+</li>
+<li><p>ease：变速（慢快慢）</p>
+</li>
+<li><p>ease-in（由慢到快）</p>
+</li>
+<li><p>ease-out（由快到慢）</p>
+</li>
+<li><p>ease-in-out（慢开始，慢结束）</p>
+</li>
+<li><p>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</p>
+</li>
+</ul>
+</li>
+<li><p>delay动画延迟时间：s/ms为单位</p>
+</li>
+</ul>
+<h2 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h2><p>关键帧动画：</p>
+<ol>
+<li><p>设置关键帧：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(两个关键帧时)</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	from:&#123;样式表&#125;</span><br><span class="line">	to:&#123;&#125;</span><br><span class="line">&#125;（两个关键帧时）</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	25%:&#123;&#125;</span><br><span class="line">	60%:&#123;&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(多个关键帧时，注意百分比一般是升序值，也可以是倒序)</span><br></pre></td></tr></table></figure></li>
+<li><p>实施动画：</p>
+<p>Animation-name 动画名 来自于@keyframes定义的动画名</p>
+<p>Animation-duration 持续时间</p>
+<p>Animation-timing-function 动画函数</p>
+<ul>
+<li>linear：匀速（默认）</li>
+<li>ease：变速（慢快慢）</li>
+<li>ease-in（由慢到快）</li>
+<li>ease-out（由快到慢）</li>
+<li>ease-in-out（慢开始，慢结束）</li>
+<li>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</li>
+</ul>
+<p>Animation-delay 动画延迟时间</p>
+<p>Animation-iteration-count 动画循环播放的次数 number/infinite（无限循环） 默认1次</p>
+<p>Animation-direction 动画播放完后是否反向播放</p>
+<ul>
+<li>normal不反向（默认值）</li>
+<li>alternate 反向</li>
+</ul>
+<p>Animation-play-state 单独使用 动画播放或停止播放</p>
+<ul>
+<li>paused：停止播放</li>
+<li>running：播放（默认值）</li>
+</ul>
+<p>Animation: name duration timing-function iteration-count direction;</p>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/06/hello-world/" data-id="ckwu56qx1000061dx2e004vqv" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" data-id="ckwu5q81t0000bgdxa9in2lqj" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML基本标签" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1><ol>
+<li><p>改变网址的代表图片：</p>
+<p>在head标签中使用link:favicon来实现</p>
+</li>
+<li><p>引入css样式三种方法：</p>
+<ul>
+<li>在heead标签中使用link:css</li>
+<li>在head标签中使用style标签进行包裹</li>
+<li>直接在语句中写入样式</li>
+</ul>
+</li>
+<li><p>br用来换行，单标签</p>
+</li>
+<li><p>hr用来生成一条水平线，单标签</p>
+</li>
+<li><p>a标签实现跳转功能，中间写入提示文字，在其中写入title属性，表示鼠标悬停时的信息</p>
+</li>
+<li><p>a标签的target属性中 _blank新建一个窗口, _self表示在当前窗口打开</p>
+</li>
+<li><p>img中的title属性显示鼠标悬停信息</p>
+</li>
+<li><p>span标签与div一样，但不会独占一行</p>
+</li>
+<li><p>i和em标签可以使文字倾斜，em还起强调作用</p>
+</li>
+<li><p>sub，sup分别设置下标和上标</p>
+</li>
+<li><p>表格属性中rowspan表示跨行，colspan表示跨列</p>
+</li>
+<li><p>表格分为：thead tbody tfoot tr表示一行 td表示一列</p>
+</li>
+</ol>
+<h1 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h1><ol>
+<li><p>表单常用属性： </p>
+<p>name：表单名称</p>
+<p>action ：表单数据提交的地方</p>
+<p>method：提交方法 有 get和 post两种</p>
+</li>
+<li><p>表单元素：</p>
+<ul>
+<li><p>input：输入，用type来具体定义：type:text/password/radio/checkbox/file/button/image/submit/reset</p>
+</li>
+<li><p>placeholder：提示文字：Username：Password：</p>
+</li>
+<li><p>value设置默认值</p>
+</li>
+<li><p>minlength 设置最少输入字符</p>
+</li>
+<li><p>maxlength</p>
+</li>
+<li><p>readonly只读</p>
+</li>
+<li><p>radio单选钮</p>
+</li>
+<li><p>checkbox复选框，后面加入选项</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>篮球<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>唱歌<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>打游戏<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>其他<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>file文件上传</p>
+</li>
+<li><p>button普通按钮，通常用来调用脚本文件</p>
+</li>
+<li><p>image 图片按钮，用法与button一样</p>
+</li>
+<li><p>submit提交按钮 用来提交数据</p>
+</li>
+<li><p>reset 重置按钮  清空还原为原来状态</p>
+</li>
+<li><p>textarea 文本域 多行文本框 用于大批量内容常用属性 id name cols rows placeholder提示文字 minlength maxlength </p>
+</li>
+<li><p>select选项 与optipn配合添加选项， 可以通过multiple实现多选 用command 用size可以调整选择框大小</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="文字处理"><a href="#文字处理" class="headerlink" title="文字处理"></a>文字处理</h1><ol>
+<li><p>text-transform 字母大小写 capitalize每个词第一个字母大写 uppercase全部大写 lowercase转换成小写</p>
+</li>
+<li><p>font-weight 加粗  100～900  700相当于bold 400相当于normal</p>
+</li>
+<li><p>伪类：表示元素的一种特殊状态</p>
+<ul>
+<li>a:link 初始状态</li>
+<li>a:visited 访问过后的状态</li>
+<li>a:hover 鼠标悬停时状态</li>
+<li>a:active 选择器用于选择活动链接</li>
+<li>focus 获得焦点</li>
+</ul>
+</li>
+<li><p>id选择器使用：[id=’’]{}</p>
+</li>
+<li><p>Float:initial 表示选择默认值，即none</p>
+</li>
+<li><p>清除浮动有三种方法：</p>
+<p>clean:left/right/both/none 清除左/右/都/都不   添加空标签清除浮动 </p>
+<p>overflow:hidden   清除浮动的父级 添加样式 超出部分隐藏 可以用来实现清除浮动</p>
+<p>：after 添加尾元素  父元素:after{content=””;display:block;clear:both;}</p>
+</li>
+<li><p>行级标签没有宽高，块级标签有</p>
+</li>
+<li><p>定位：position</p>
+<ul>
+<li>static默认值 没有定位</li>
+<li>relative 相对定位 占用文档流 可以设置偏移，但原来占据的位置不能填充其他元素</li>
+<li>absolute 脱离文档流，相对于body做偏移左上角（0，0）</li>
+<li>absolute与relative配合使用，相对于relative（父级）做移动</li>
+<li>fixed 脱离文档流，相对于（0，0）作位移</li>
+<li>z-index一般用在absolute 上 调整显示顺序</li>
+</ul>
+</li>
+<li><p>锚点：通过</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump1&quot;</span>&gt;</span>跳转1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump2&quot;</span>&gt;</span>跳转2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump3&quot;</span>&gt;</span>跳转3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump1&quot;</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump2&quot;</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump3&quot;</span>&gt;</span>段落3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" data-id="ckwu5q8230001bgdx5wy6c7k7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="下拉式菜单实现"><a href="#下拉式菜单实现" class="headerlink" title="下拉式菜单实现"></a>下拉式菜单实现</h1><h2 id="注意细节："><a href="#注意细节：" class="headerlink" title="注意细节："></a>注意细节：</h2><ul>
+<li>构建基本框架文本结构时注意</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;nav&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码可形成下拉项菜单</p>
+<ul>
+<li>如何让下拉式只有在鼠标悬停时才会出现下拉项？</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: initial;</span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: none; (让其消失，不显现)</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 鼠标悬停在li标签时，对下拉项样式进行改变*/</span></span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/CSS%E5%BA%94%E7%94%A8/" data-id="ckwu5q8280003bgdx0hj79q8s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/">Javascript基础--函数作用域，数据类型，break，continue</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="break关键字可以用来退出循环和switch语句"><a href="#break关键字可以用来退出循环和switch语句" class="headerlink" title="break关键字可以用来退出循环和switch语句"></a>break关键字可以用来退出循环和switch语句</h1><p>不能在if语句中使用break和continue</p>
+<p>break会立即终止与他最近的循环</p>
+<p>终止指定的循环的话可以采用以下label标签的做法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hello:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;outer&quot;</span>+i);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;<span class="number">5</span>;j++)&#123;</span><br><span class="line">    <span class="comment">//break hello;直接终止外层循环hello</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;inside&quot;</span>+j)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>continue可以用来跳过当前这次循环，continue后面的语句都不执行</p>
+<p>同样我们可以用label标签来指定跳过某次循环</p>
+<p>console.time(“计时器名字”)，可以用来开启一个计时器，需要一个字符串作为参数</p>
+<p>Console.timeEnd(“计时器名字”)，用来终止一个计时器，也需要一个字符串为参数</p>
+<p>使用new关键字调用的函数，是构造函数的constructor 是专门用来创建对象的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//obj现在就是一个对象</span></span><br><span class="line"><span class="comment">//对象.属性 = 属性值 // 添加一个属性</span></span><br></pre></td></tr></table></figure>
+
+<p>读取对象中没有的属性不会报错，返回undefined</p>
+<p>修改操作，删除操作：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">&quot;sakura.ken&quot;</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br><span class="line">obj.weight = <span class="string">&quot;80kg&quot;</span>;<span class="comment">//以上都是添加属性</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&quot;ken&quot;</span>;<span class="comment">//修改属性</span></span><br><span class="line"><span class="keyword">delete</span> obj.age ;<span class="comment">//删除操作 delete 对象.属性名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> na = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj[na]);<span class="comment">//使用[]来调用变量</span></span><br></pre></td></tr></table></figure>
+
+<p>检查一个对象里面是否有某个属性：in 操作符</p>
+<p>有 则返回true ，否则返回false</p>
+<p>“属性名” in  对象</p>
+<p>Js的变量都是保存到栈内存中的，基本变量直接在栈内存中存储，值与值之间独立存在。</p>
+<p>对象是保存在堆内存中的，每创建一个新对象，就开辟一个新空间，此时变量保存的事吉祥的内存地址。</p>
+<h2 id="基本数据类型保存的是值，引用数据类型保存的是地址"><a href="#基本数据类型保存的是值，引用数据类型保存的是地址" class="headerlink" title="基本数据类型保存的是值，引用数据类型保存的是地址"></a>基本数据类型保存的是值，引用数据类型保存的是地址</h2><p>两个引用数据类型相比较，比较的是对象的内存地址，如果对象一摸一样，地址不一样也会返回false</p>
+<p>函数也是一个对象，创建函数,用typeof检查函数的类型为function</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>();<span class="comment">//很少使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="comment">//函数声明</span></span><br><span class="line"><span class="comment">//注意区别 这里的add和add()</span></span><br><span class="line"><span class="comment">//add是函数的内容</span></span><br><span class="line"><span class="comment">//add()是函数返回值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>对象的属性值也可以是函数，一个函数成为了一个对象的属性值，那么称这个函数为对象的方法，调用函数时称为调用对象的方法</p>
+<p>枚举对象中的属性 for…in</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> 变量 <span class="keyword">in</span> 对象)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( 变量 );<span class="comment">//对象里面有几个属性就执行几次循环体，且每次执行时都会将属性的名字赋值给变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(obj[n]);<span class="comment">//obj是对象，n是变量，该语句输出对象的所有属性名，值得注意的是⚠️：变量不能用obj.变量来获取，而是[]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>作用域：全局作用域 与 函数作用域</p>
+<p>全局作用域在窗口打开时创建，在窗口关闭时关闭，全局作用域中有一个全局对象window，</p>
+<p>创建的全局变量都会保存在window的属性中，创建的函数都会作为window对象的方法保存</p>
+<p>变量的声明提前：使用var关键字声明函数会在所有代码执行前被声明，但是还没有赋值</p>
+<p>函数的声明提前：直接使用函数声明形式，会在所有代码执行前声明并赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种声明方式只能在函数被赋值之后调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种函数可以被提前调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在函数中不使用声明定义的变量会成为全局变量，可以修改全局变量的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a  = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line">  a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//此时a会输出20而不是10</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>定义形参就相当于在函数的作用域中声明了变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> e = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//如果function add(e) 此处相当于声明了一个变量e</span></span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line">add() =&gt;<span class="number">10</span>;</span><br><span class="line">add(<span class="number">12</span>) =&gt;<span class="number">12</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>注意⚠️</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert (d);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">10</span>;<span class="comment">//结果会弹出undfined而不是10，var提前声明但不赋值，走到var = 10这时才给它赋值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>this</p>
+<p>解析在调用函数时每次都会向函数内部传递一个隐含参数，这个参数就是this，this指向的是一个对象，函数执行的上下文对象</p>
+<p>根据函数调用的方式不同，this将会指向不同的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun();<span class="comment">//以函数形式调用，this指向window</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Person();<span class="comment">//以构造函数调用时，this就是创建的新对象</span></span><br><span class="line">obj.myName();<span class="comment">//以方法形式调用，this指向调用方法的对象</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);<span class="comment">//this.name可以让程序更加灵活⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;tianyu&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;jianjian&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;mama&quot;</span>;</span><br><span class="line"></span><br><span class="line">fun();</span><br><span class="line">obj1.sayName();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>批量生产对象：该方法创建的对象都是Object类型，导致无法区分多个对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  obj.a = a;</span><br><span class="line">  obj.b = b;</span><br><span class="line">  obj.c = c;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = createPerson(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);<span class="comment">//输出为&#123;a: &#x27;a&#x27;, b: &#x27;b&#x27;, c: &#x27;c&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>针对上面问题，我们可以创建构造函数，创建构造函数与普通函数没区别，首字母大写⚠️，只是调用方式不同</p>
+<p>普通函数是直接调用，构造函数则是使用new关键字进行调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;tianyu&quot;</span>;<span class="comment">//为obj1中添加属性及属性值，⚠️this指向obj1⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> Person();<span class="comment">//obj1此时是个对象</span></span><br></pre></td></tr></table></figure>
+
+<p>构造函数创建后：</p>
+<ol>
+<li>立即创建一个新的对象</li>
+<li>将新建的对象设置为函数中this</li>
+<li>执行函数中的代码</li>
+<li>返回新建的对象</li>
+</ol>
+<p>对象 instanceof  构造函数 判断一个对象是否是一个类的实例，是则返回true 否则false</p>
+<p>原型prototype，我们所创建的每一个函数都会有一个隐含对象，如果普通函数调用propoto属性没有任何用，</p>
+<p>当函数以构造函数调用时它所创建的对象中都会有一个隐含属性，可以通过以下方式调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">add</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> mov1 = <span class="keyword">new</span> add();</span><br><span class="line"><span class="keyword">var</span> mov2 = <span class="keyword">new</span> add();<span class="comment">//构造函数创建对象</span></span><br><span class="line"><span class="built_in">console</span>.log( mov1.__proto__ == mov2.__proto__);<span class="comment">//__proto__来调用,返回的结果是true</span></span><br></pre></td></tr></table></figure>
+
+<p>原型对象就是一个公共的区域，所有的相同类的构造函数及实例都可以访问到该区域</p>
+<p>我们可以将实例所共有的属性设置到原型对象中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add.prototype.a = <span class="number">3</span>;<span class="comment">//接着上段代码，在add的原型对象中添加了一个属性a</span></span><br><span class="line">add.prototype.sayHello()&#123;</span><br><span class="line">  alert(<span class="string">&quot;hello&quot;</span>);<span class="comment">//在原型对象中添加方法</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"><a href="#我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype" class="headerlink" title="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"></a>我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype</h3><p>在检查一个对象里有没有某个属性时，我们有两种方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;name&quot;</span> <span class="keyword">in</span> add;<span class="comment">//检查对象自身以及⚠️原型对象中是否有该属性</span></span><br><span class="line">add.hasOwnProperty(<span class="string">&quot;name&quot;</span>);<span class="comment">//检查对象自身中是否有该属性</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/JS%E5%9F%BA%E7%A1%80/" data-id="ckwu5q8290004bgdx64dt3d0a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS3新属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/">CSS新属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><p>css3的新特性：</p>
+<ol>
+<li>选择器</li>
+<li>阴影</li>
+<li>形状转换 2D和3D之间的转换</li>
+<li>变形</li>
+<li>动画（过渡动画，帧动画）</li>
+<li>边框</li>
+<li>背景（多重背景）</li>
+<li>反射</li>
+<li>文字</li>
+<li>颜色 （rgba/ hsl/ hsla）</li>
+<li>滤镜（filter）</li>
+<li>弹性布局</li>
+<li>多列布局</li>
+<li>盒模型</li>
+<li>web字体</li>
+<li>媒体查询</li>
+</ol>
+<p>CSS3并不是所有的浏览器都兼容，需要做兼容处理，通常的做法就是加厂商前缀</p>
+<ol>
+<li><p>主流浏览器内核</p>
+<ol>
+<li><p>Trident：IE内核</p>
+</li>
+<li><p>Webkit：Safari和Chrome的内核</p>
+</li>
+<li><p>Gecko：FireFox的内核</p>
+</li>
+<li><p>Blink：Chrome和Opera的内核 （webkit的一个分支）</p>
+<p>目前国内的浏览器大多都是双核的，通常是IE内核+Chrome内核</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>2.厂商前缀</p>
+<ul>
+<li>IE对应的是-ms-</li>
+<li>Chrome and Safari : -webkit-</li>
+<li>FireFox: -moz-</li>
+<li>Opera: -o-</li>
+</ul>
+<p>3.CSS3 选择器</p>
+<ol>
+<li><p>属性选择器：</p>
+<p>[属性名]</p>
+<p>[属性名=属性值]</p>
+<p>[属性名^=属性值]</p>
+<p>[属性名$=属性值]</p>
+<p>[属性名*=属性值]</p>
+<p>​            /* class^ 表示以class开头 */</p>
+<p>​            /* class$ 表示以content结尾 */</p>
+<p>​            /* class* 表示中间包含class */</p>
+</li>
+<li><p>结构性伪类 ：</p>
+<ul>
+<li><p>root 匹配html标签   与body选择器效果一样</p>
+</li>
+<li><p>first-child 找的是第一个子元素</p>
+</li>
+<li><p>last-child 最后一个子元素</p>
+</li>
+<li><p>nth-last-child 倒数第n个子元素</p>
+</li>
+<li><p>nth-child 第几个子元素</p>
+</li>
+<li><p>```html<br>nth-last-child(3)<br>nth-last-child(2n)/表示偶数位<br>注意颜色的先后次序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   - 对连续的同类标签有效 如果不是连续的 我们需要用</span><br><span class="line"></span><br><span class="line">     :nth-of-type(n)</span><br><span class="line"></span><br><span class="line">     :nth-last-of-type(n)</span><br><span class="line"></span><br><span class="line">   - :only-child 父级中仅有一个目标标签，其他标签不允许存在，但在目标标签中可以有子标签</span><br><span class="line"></span><br><span class="line">   - :only-of-type 父级中仅有一个目标元素，其他标签允许存在</span><br><span class="line"></span><br><span class="line">   - :empty 没有元素 包含文本元素</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.目标伪类：</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;a href=&quot;#jump1&quot;&gt;跳转1&lt;/a&gt;</span><br><span class="line">&lt;p id=&quot;jump1&quot;&gt;</span><br><span class="line">   文章的内容</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;!--实现页面内跳转--&gt;</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<p>:target 对目标标签操作 匹配url指向的元素</p>
+<p>4.UI元素状态伪类 （表单元素的伪类）</p>
+<ul>
+<li>:enabled 匹配form表单中可用状态的元素</li>
+<li>:disabled 匹配form表单中不可用状态的元素</li>
+<li>:checked 匹配form表单中选中状态的元素（只在opera浏览器中有效）</li>
+<li>:selection 文本选中时高亮显示</li>
+</ul>
+<p>5.否定伪类</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">p</span>)&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>：blue；</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="comment">&lt;!--把container模块中不是p标签的背景颜色设置为蓝色--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>duanluo1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>duanluo2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span>&gt;</span>em<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>6.通用兄弟元素选择器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.div1</span>~<span class="selector-class">.div3</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">color</span>:red;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">clsaa</span>=<span class="string">&quot;test&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div1&quot;</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div2&quot;</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div3&quot;</span>&gt;</span>div3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="CSS3文本"><a href="#CSS3文本" class="headerlink" title="CSS3文本"></a>CSS3文本</h1><ol>
+<li><p>文本阴影</p>
+<ul>
+<li><p>text-shadow ：横向偏移 纵向偏移 模糊 颜色 （主流浏览器都支持）</p>
+</li>
+<li><p>word-wrap : normal 只在允许的断字点换行 break-word 在长单词或url地址内部进行换行</p>
+</li>
+<li><p>word-break: 单词拆分 normal使用浏览器默认的换行</p>
+<p> break-all允许在单词内换行 keep-all只能在半角空格或连字符处换行</p>
+</li>
+<li><p>文本溢出</p>
+<p> 单行：text-overflow：clip （直接修剪） / ellipsis （会用省略号代替被修剪文本）/ string</p>
+<p> white-space：nowrap（不允许换行）</p>
+<p> 多行：</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css"><span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">	<span class="attribute">width</span>:<span class="number">300px</span>;</span></span><br><span class="line"><span class="css">	<span class="attribute">white-space</span>:nowrap;</span></span><br><span class="line"><span class="css">	<span class="attribute">text-overflow</span>:ellipsis;</span></span><br><span class="line"><span class="css">	<span class="attribute">overflow</span>:hidden;</span></span><br><span class="line"><span class="css">&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--单行文本溢出--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>文章的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>:<span class="number">300px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>:-webkit-box;</span></span><br><span class="line"><span class="css">    -webkit-box-orient:vertical;</span></span><br><span class="line"><span class="css">    -webkit-line-clamp:行数;</span></span><br><span class="line"><span class="css">    <span class="attribute">overflow</span>:hidden;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="CSS3边框"><a href="#CSS3边框" class="headerlink" title="CSS3边框"></a>CSS3边框</h1><ol>
+<li><p>圆角边框：border-radius:</p>
+<p>四个方位值：top-left    top-right    bottom-left    bottom-right</p>
+<p>border-radius: 后面两个参数时，第一个为左上和右下，第二个为右上和左下</p>
+<p>后面三个参数时：第一个是左上，第二个是右上和左下，第三个是右下</p>
+<p>后面四个参数时，对应左上 右上 右下 左下</p>
+</li>
+<li><p>边框阴影</p>
+<p>box-shadow:水平偏移，垂直偏移，模糊距离（可选项），阴影尺寸（可选项），颜色（可选项）[inset]</p>
+</li>
+<li><p>边框图片：</p>
+<p>border-image: source(图片路径)  slice(边框向内偏移)  width(图片边框的宽度)    outset(边框图像区域超出边框的量)  repeat（平铺 round铺满。 stretch拉伸）</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="CSS背景"><a href="#CSS背景" class="headerlink" title="CSS背景"></a>CSS背景</h1><ul>
+<li><p>多重背景 background:背景色 背景图片 平铺方式 位置，背景色 背景图片 平铺方式 位置···</p>
+</li>
+<li><p>background-size 设置背景图片尺寸</p>
+<p>Background-size: 横向 纵向 contain 图像扩大至最大尺寸，完全适应内容区域</p>
+<p>cover 背景图扩展至足够大，完全覆盖背景区域</p>
+</li>
+<li><p>background-origin：指定背景图像的位置区域</p>
+<p>Padding-box:背景图相对于内边距框来定义</p>
+<p>content-box：以内容为基准加载背景图</p>
+<p>border-box：以border为 边框线</p>
+</li>
+<li><p>background-clip：设定背景图像的·绘制区域</p>
+</li>
+<li><p>渐变背景</p>
+</li>
+</ul>
+<h1 id="CSS3颜色"><a href="#CSS3颜色" class="headerlink" title="CSS3颜色"></a>CSS3颜色</h1><ul>
+<li>reba(r,g,b,a)   a代表的不透明度 越小越透明 ，取值0-1</li>
+<li>hsl(h,s,l)  h是色调，取值范围0-360  s表示饱和度 取值范围0-100%  l是亮度 0-100%</li>
+<li>hsla(h,s,l,a) h是色调，取值范围0-360  s表示饱和度 取值范围0-100%  l是亮度 0-100%  a是不饱和度</li>
+<li>Opacity:调整元素的不透明度 大多数情况下用于做元素的遮罩效果  取值范围为0-1</li>
+</ul>
+<p>inline-block导致模块之间的间隙要用margin-left来消除</p>
+<h1 id="CSS3渐变"><a href="#CSS3渐变" class="headerlink" title="CSS3渐变"></a>CSS3渐变</h1><ul>
+<li><p>线性渐变</p>
+<p>background：linear-gradient（方向或角度，颜色1，颜色2……）</p>
+<p>方向：</p>
+<p>to left</p>
+<p>to right</p>
+<p>to top</p>
+<p>to bottom</p>
+<p>to top left</p>
+<p>to top right</p>
+<p>to bottom left</p>
+<p>to bottom right</p>
+<p>角度：</p>
+<p>45度： 45deg</p>
+</li>
+<li><p>径向渐变 </p>
+<p>Background: radial-gradient (shape  size(渐变大小)  center,start color……,last-color );</p>
+<p>shape：ellipse（椭圆径向渐变，默认） circle（圆径向渐变）</p>
+<p>size：</p>
+<ul>
+<li>farthest-corner（渐变半径为从圆心到最远的角，默认） </li>
+<li>closest-side（渐变半径为从圆心到最近的边） </li>
+<li>closest-corner（渐变半径为从圆心到最近的角）</li>
+<li>farthest-side（渐变半径为从圆心到最远的边）</li>
+</ul>
+<p>位置：</p>
+<ul>
+<li><p>center：设置圆心在中心位置，默认</p>
+</li>
+<li><p>top：设置圆心在顶部位置</p>
+</li>
+<li><p>bottom：设置圆心在底部位置</p>
+</li>
+<li><p>at 圆心横坐标，圆心纵坐标：设定圆心位置在指定位置</p>
+</li>
+</ul>
+</li>
+<li><p>文字渐变</p>
+<p> Background-image:线性或者径向；</p>
+<p>-webkit-background-clip:text;</p>
+<p>-webkit-text-fill-color: transparent;</p>
+</li>
+</ul>
+<h1 id="CSS3盒子模型"><a href="#CSS3盒子模型" class="headerlink" title="CSS3盒子模型"></a>CSS3盒子模型</h1><p>box-sizing   允许以某种方式定义某种元素以适应指定的区域</p>
+<p>box-sizing：content-box   /    border-box 火狐需要厂商前缀</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwu5q82b0005bgdx0k1f0qfc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML5新属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/">HTML新属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h1><p>新增属性：</p>
+<ol>
+<li><p>增加了audio 和video音频播放，抛弃了Flash</p>
+</li>
+<li><p>新增了canvas画布 （绘画 制作动画）</p>
+</li>
+<li><p>地理定位</p>
+</li>
+<li><p>增加了离线缓存</p>
+</li>
+<li><p>硬件加速</p>
+</li>
+<li><p>Web Socket 全双工通信</p>
+</li>
+<li><p>增加了本地存储</p>
+</li>
+<li><p>新增了语义化标签</p>
+</li>
+</ol>
+<p>网页布局标签：</p>
+<ul>
+<li>header 页首</li>
+<li>nav 导航</li>
+<li>aside 侧边栏</li>
+<li>main 主体</li>
+<li>section 区块</li>
+<li>article 文章</li>
+<li>footer 页尾</li>
+</ul>
+<p>语义化标签</p>
+<ol>
+<li><p>mark 高亮显示</p>
+</li>
+<li><p>details描述  summary 摘要  一般用于名词解释   summary为标题呈现</p>
+</li>
+<li><p>meter 用来设置度量衡 </p>
+<ul>
+<li><p>value当前值</p>
+</li>
+<li><p>min最小值</p>
+</li>
+<li><p>max最大值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meter</span> <span class="attr">value</span>=<span class="string">&quot;80&quot;</span> <span class="attr">min</span>=<span class="string">&quot;60&quot;</span> <span class="attr">max</span>=<span class="string">&quot;100&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">meter</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>progress</p>
+<ul>
+<li>value当前值</li>
+<li>min最小值</li>
+<li>max最大值 </li>
+</ul>
+</li>
+<li><p>dialog对话框或者窗口</p>
+<p>在标签中加入open属性 &amp;times；是❌号</p>
+</li>
+<li><p>figure用来组合与元素 一般用来组合一张图的标题·图片·图片描述等 </p>
+</li>
+</ol>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="HTML多媒体"><a href="#HTML多媒体" class="headerlink" title="HTML多媒体"></a>HTML多媒体</h2><ul>
+<li><p>Audio 播放音乐或音频</p>
+</li>
+<li><p>支持格式 .ogg .mp3 .wav</p>
+</li>
+<li><p>属性：</p>
+<ol>
+<li><p>src文件路径</p>
+</li>
+<li><p>autoplay自动播放</p>
+</li>
+<li><p>loop循环</p>
+</li>
+<li><p>controls控制条</p>
+</li>
+<li><p>muted静音</p>
+</li>
+<li><p>preload预加载 使用autoplay时，preload自动失效</p>
+</li>
+</ol>
+</li>
+<li><p>video 加载视频</p>
+</li>
+<li><p>支持格式 .mp4 .ogg .webm</p>
+</li>
+<li><p>属性：</p>
+<ol>
+<li><p>src文件路径</p>
+</li>
+<li><p>autoplay自动播放</p>
+</li>
+<li><p>loop循环</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loop=&quot;2&quot; 表示循环两次</span><br></pre></td></tr></table></figure></li>
+<li><p>controls控制条</p>
+</li>
+<li><p>muted静音</p>
+</li>
+<li><p>preload预加载 使用autoplay时，preload自动失效</p>
+</li>
+<li><p>width宽度</p>
+</li>
+<li><p>height高度</p>
+</li>
+<li><p>poster海报</p>
+</li>
+</ol>
+</li>
+<li><p>embed 用来加载插件 嵌入内容</p>
+</li>
+<li><p>属性</p>
+<ol>
+<li>src</li>
+<li>width</li>
+<li>height</li>
+<li>type类型</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>canvas画布 是一个容器元素<ol>
+<li>单独使用canvas没有什么意义，必须结合Javascript ，它的具体功能体现是通过javascript来体现的</li>
+<li>canvas的宽高不要通过css实现，而是直接通过width和height来实现</li>
+</ol>
+</li>
+</ul>
+<h1 id="HTML新属性"><a href="#HTML新属性" class="headerlink" title="HTML新属性"></a>HTML新属性</h1><ul>
+<li><p>contentEditable 将标签转换为可编辑状态</p>
+</li>
+<li><p>hidden 对元素进行隐藏，一般用来传值或当某个条件成立时，执行显示内容 默认值为hidden</p>
+</li>
+<li><p>data-*：用于存储页面或着应用程序的私有自定义数据，一般用于传值</p>
+</li>
+<li><p>multiple 规定输入域可选择多个内容 用于file/select</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">multiple</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>required  约束表单元素在提交前必须输入值 用于表单组件中，需要结合提交按钮</p>
+<form>
+  <input type="text" placeholder="Username" required><br>
+  <input type="submit">
+</form></li>
+<li><p>pattern 规定用于验证输入字段的模式 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;Username&quot;</span> <span class="attr">required</span> <span class="attr">pattern</span>=<span class="string">&quot;[A-Za-z0-9]&#123;4,6&#125;&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="HTML新表单组件"><a href="#HTML新表单组件" class="headerlink" title="HTML新表单组件"></a>HTML新表单组件</h1><ol>
+<li><p>color颜色</p>
+</li>
+<li><p>⭐️email邮箱</p>
+</li>
+<li><p>tel电话</p>
+</li>
+<li><p>url网址</p>
+</li>
+<li><p>number数字</p>
+</li>
+<li><p>range范围</p>
+</li>
+<li><p>search搜索</p>
+</li>
+<li><p>date日期</p>
+</li>
+<li><p>datatime日期时间</p>
+</li>
+<li><p> datetime-local当地时间</p>
+</li>
+<li><p>year年</p>
+</li>
+<li><p>month月</p>
+</li>
+<li><p>time时间</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;color&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;email&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;tel&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;url&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;number&quot;</span> <span class="attr">step</span>=<span class="string">&quot;10&quot;</span> <span class="attr">min</span>=<span class="string">&quot;-80&quot;</span> <span class="attr">max</span>=<span class="string">&quot;100&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;range&quot;</span> <span class="attr">value</span>=<span class="string">&quot;20&quot;</span> <span class="attr">min</span>=<span class="string">&quot;-80&quot;</span> <span class="attr">max</span>=<span class="string">&quot;100&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;search&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h1><ol>
+<li><p>formaction修改action数据提交的地方 不是在form行操作</p>
+</li>
+<li><p>formenctype修改表单请求的类型</p>
+</li>
+<li><p>formmethod修改数据提交的方法</p>
+<ul>
+<li>get是以字节为单位提交，只接受ASCII码，post是以字符为单位提交</li>
+<li>get是明文方式，提交的数据会显示在地址栏中，而post是暗文方式提交</li>
+<li>get在浏览器中回退是无害的，而post会再次提交请求</li>
+<li>get会被浏览器缓存 而post不会，除非手动设置  </li>
+</ul>
+</li>
+<li><p>form设置表单元素属于哪个表单</p>
+</li>
+<li><p>novalidate不验证</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;http://www.baidu.com&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">formaction</span>=<span class="string">&quot;//163.com&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="input属性"><a href="#input属性" class="headerlink" title="input属性"></a>input属性</h2><ol>
+<li><p>autocomplete自动完成</p>
+<ul>
+<li><p>用来帮助用户输入，每一次输入的内容，浏览器是否保存输入的值，以备将来使用，有on/off 默认为on</p>
+</li>
+<li><p>为了保护敏感数据，避免本地浏览器对它们不安全存储，一般需要关闭</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;Username&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span> <span class="attr">autofocus</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>autofocus自动获焦 </p>
+</li>
+<li><p>step步长</p>
+</li>
+<li><p>multiple多选</p>
+</li>
+<li><p>pattern正则匹配</p>
+</li>
+<li><p>placeholder输入提示</p>
+</li>
+<li><p>required必须输入</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwu5q82c0008bgdx3uut4krk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript 基础day1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/">Javascript基础--if/switch及函数调用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Javascript-基础"><a href="#Javascript-基础" class="headerlink" title="Javascript 基础"></a>Javascript 基础</h1><p>day1总结：</p>
+<ol>
+<li><p>let定义变量只能用一次</p>
+</li>
+<li><p>const定义后不能被重新赋值，一般都用大写</p>
+</li>
+<li><p>索引[ ],从0开始，用变量.length可以得到变量的长度</p>
+</li>
+<li><p>可以用索引的方式改变数组数据，但是不能改变字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array[<span class="number">2</span>] = <span class="string">&quot;dog&quot;</span>;<span class="comment">//</span></span><br></pre></td></tr></table></figure></li>
+<li><p>操作数组：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array.push(<span class="string">&quot;内容&quot;</span>);<span class="comment">// 将内容加到数组后面</span></span><br><span class="line">array.pop();<span class="comment">//弹出末尾元素，且本身就是代表弹出元素</span></span><br><span class="line">array.shift();<span class="comment">//移除第一个元素，本身表示被移除的元素</span></span><br><span class="line">array.unshift(<span class="string">&quot;内容&quot;</span>);<span class="comment">//在第一位加入元素</span></span><br></pre></td></tr></table></figure></li>
+<li><p>调用函数方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hanshu</span>(<span class="params">a,b,c</span>)</span>&#123;<span class="comment">//a,b,c为参数，也可以不写</span></span><br><span class="line">  <span class="keyword">return</span> num<span class="comment">//将num值返回给函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>全局变量： 在函数外定义或者 在函数内不用let/const定义</p>
+<p>值得注意的是，局部变量名=全局变量名时，局部变量优先，函数内改变全局变量不会改变其本来的值，但会作用在函数内</p>
+</li>
+<li><p>if/else if/else的使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>()&#123;</span><br><span class="line"><span class="comment">//if的（）条件中 ==，！=，&lt;,&gt;会实现强制类型转换</span></span><br><span class="line"><span class="comment">// 1==&quot;1&quot; 得到真 </span></span><br><span class="line"><span class="comment">// ===不会做类型转换 1===&quot;1&quot; 得到假</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p> switch结构</p>
+</li>
+</ol>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>（判断）&#123;</span><br><span class="line"><span class="keyword">case</span><span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span></span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li><p>执行到return语句时，返回结果并结束程序，return后面的语句不会执行</p>
+</li>
+<li><p>对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ourDog&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span> : <span class="string">&quot;campter&quot;</span>,</span><br><span class="line">  <span class="string">&quot;legs&quot;</span> : <span class="number">4</span>,</span><br><span class="line">  <span class="string">&quot;tails&quot;</span> : <span class="number">1</span>,</span><br><span class="line">  <span class="string">&quot;friends&quot;</span> : [...,..,..]</span><br><span class="line">&#125;</span><br><span class="line">ourDog.bark = <span class="string">&quot;woof&quot;</span>;<span class="comment">//添加属性</span></span><br><span class="line"><span class="keyword">delete</span> ourDog.bark;<span class="comment">//删除属性</span></span><br></pre></td></tr></table></figure></li>
+<li><p>检查对象是否有指定的属性  对象.hasOwnProperty（ 属性 ）</p>
+<p>值得注意的是返回对象中的元素时我们要用obj.[元素名]来实现</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/" data-id="ckwu5q82d000abgdx9uejb9sz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/Javascript/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/Javascript/">Javascript基础--变量及运算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><ol>
+<li><p>三种引入方式：</p>
+<ul>
+<li>通过script标签写在任意地方，但是一般写在body后面,避免js堵塞和影响操作DOM</li>
+<li>a标签的href中引入js文件</li>
+<li>用script标签的src属性引入外部js文件</li>
+</ul>
+</li>
+<li><p>变量名命名规则：</p>
+<ul>
+<li>变量名必须以字母、下划线 “_”、美元符号 “$” 开头，不能以数字开头</li>
+<li>变量可以包含字母、数字、下划线和美元符号</li>
+<li>不能使用 JavaScript 中的关键字做为变量名</li>
+<li>变量名不能有空格</li>
+<li>变量名对大小写敏感，比如：name 和 Name 就是两个完全不同的变量</li>
+</ul>
+</li>
+<li><p>通过 var 关键字来声明变量，变量类型：</p>
+<ul>
+<li>number：浮点型，整数型都可以</li>
+<li>string：字符串型，需要引号</li>
+<li>boolean：true/false</li>
+<li>array：数组型</li>
+<li>object：对象型</li>
+</ul>
+</li>
+<li><p>值得注意的就是引号中如果是一个数字，它依然是 string 类型的。我们可以在控制台中通过 <code>typeof</code> 函数，来查看我们声明的变量是什么类型的</p>
+</li>
+<li><p> <code>num++</code> 和 <code>++num</code> 的区别，前者是先赋值再自增，后者是先自增再赋值</p>
+</li>
+<li><p>运算符号</p>
+<ul>
+<li>+</li>
+<li>-</li>
+<li>*</li>
+<li>/ 除 带小数 ex： 2/3=0.66666</li>
+<li>++</li>
+</ul>
+<hr>
+<ul>
+<li>%取余</li>
+<li>+=        x+=4 ————&gt; x=x+4</li>
+<li>-=</li>
+<li>*=</li>
+<li>/=</li>
+<li>===</li>
+<li>!==</li>
+<li>大于&gt;</li>
+<li>小于&lt;</li>
+<li>大于等于&gt;=</li>
+<li>小于等于&lt;=  输出的值为true/false</li>
+<li>&amp;&amp;</li>
+<li>||</li>
+<li>？：   ex：c？x：y 代表判断c的值是true还是false true的话返回x，false的话返回y</li>
+</ul>
+</li>
+<li><p>document.write :向body中写入一个内容</p>
+<p>Console.log在控制台输出一个内容</p>
+<p>typeof检查类型，输出结果是一个字符串</p>
+</li>
+<li><p>将js写入button的onclick属性中，写入a标签的href属性中</p>
+</li>
+<li><p>script标签一旦引入外部文件后，在其内写入的代码不会起作用</p>
+</li>
+<li><p>\表示转义符号 ， 加上引号就是字符串，不加就是变量</p>
+</li>
+<li><p>调用 XXX的YYY()方法就是：XXX.YYY()</p>
+</li>
+<li><p>将字符串转换为数字：</p>
+<p>parseInt 获得字符串中数字，可用parseInt（a，10）要求输出10进制</p>
+<p>parseFloat 获得字符串中小数</p>
+<p>Number</p>
+</li>
+<li><p>16进制0x开头 八进制0开头</p>
+</li>
+<li><p>数字—&gt;布尔 除了0和NaN，其余都是true</p>
+</li>
+<li><p>字符串—&gt;布尔， 除了空串，其余都是true</p>
+</li>
+<li><p>Null和undefined转换为布尔都是false</p>
+</li>
+<li><p>+可以实现字符串拼串效果，任何值和字符串做加法运算，都会先转换为字符串，然后再和字符串做拼串操作,可以利用这个来实现字符串的转换，将任意一个想要转换的加上空串就行</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/Javascript/" data-id="ckwu5q82f000dbgdxccix0gb9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+
     </footer>
   </div>
   
@@ -115,6 +1296,11 @@
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
@@ -123,15 +1309,29 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="tag">flex弹性布局</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS%E5%AE%9E%E4%BE%8B/" style="font-size: 10px;">CSS实例</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 10px;">flex弹性布局</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
     </div>
   </div>
 
@@ -144,7 +1344,23 @@
       <ul>
         
           <li>
-            <a href="/2021/12/06/hello-world/">Hello World</a>
+            <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/05/%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
           </li>
         
       </ul>

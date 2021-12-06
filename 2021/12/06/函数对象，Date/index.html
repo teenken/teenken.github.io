@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数对象函数的方法：call和apply都是函数的方法，需要通过函数对象来调用，括号里对象（第一个参数）成为this的源对象 12345678910111213141516171819202122232425262728function fun ()&amp;#123;  alert(this.name);&amp;#125;name &#x3D; 3;obj &#x3D; &amp;#123;  name:&quot;Jack&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="函数对象函数的方法：call和apply都是函数的方法，需要通过函数对象来调用，括号里对象（第一个参数）成为this的源对象 12345678910111213141516171819202122232425262728function fun ()&amp;#123;  alert(this.name);&amp;#125;name &#x3D; 3;obj &#x3D; &amp;#123;  name:&quot;Jack&quot;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-12-06T03:39:05.561Z">
+<meta property="article:modified_time" content="2021-12-06T03:39:05.561Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-函数对象，Date" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" class="article-date">
+  <time datetime="2021-12-06T03:39:05.561Z" itemprop="datePublished">2021-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="函数对象"><a href="#函数对象" class="headerlink" title="函数对象"></a>函数对象</h1><p>函数的方法：call和apply都是函数的方法，需要通过函数对象来调用，括号里对象（第一个参数）成为this的源对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">name = <span class="number">3</span>;</span><br><span class="line">obj = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;Jack&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line">fun();<span class="comment">//显示3,this指向window </span></span><br><span class="line">														</span><br><span class="line">fun(obj);<span class="comment">//显示3，this指向window</span></span><br><span class="line"></span><br><span class="line">fun.call(obj);<span class="comment">//显示Jack，this指向obj</span></span><br><span class="line"></span><br><span class="line">fun.apply(obj);<span class="comment">//显示Jack，this指向obj</span></span><br><span class="line"></span><br><span class="line">fun.call(obj,a,b);<span class="comment">//obj为对象，a和b为实参，可以添加在call内依次传递</span></span><br><span class="line"></span><br><span class="line">fun.apply(obj,[a,b]);<span class="comment">//obj为对象，实参必须封装在一个数组中传递，⚠️这就是唯一的区别⚠️</span></span><br><span class="line"></span><br><span class="line">注意注意注意⚠️！！！！</span><br><span class="line"><span class="comment">//⚠️以函数形式调用时，this永远指向的是window</span></span><br><span class="line"><span class="comment">//⚠️以构造函数调用时，this指向的是信创建的对象</span></span><br><span class="line"><span class="comment">//⚠️以方法的形式调用时，指向调用方法的对象</span></span><br><span class="line"><span class="comment">//⚠️使用call和apply调用时this指定的对象为其所传递的对象</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//调用函数时，浏览器都会传递进两个隐含的参数：this 和 arguments（封装实参的对象）类数组对象，可以通过索引来操作数据</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h1><p>创建一个date对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;3/1/2002 12:00:00&quot;</span>);<span class="comment">//用字符串设置一个指定时间</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//会输出当前的时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//日期格式 月/日/年 具体时间</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>Date对象的方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">a.getDate();<span class="comment">//获取a的 日  返回1～31</span></span><br><span class="line"></span><br><span class="line">a.getDay();<span class="comment">//返回0～6，0是周日</span></span><br><span class="line"></span><br><span class="line">a.getMonth();<span class="comment">//返回0～11，表月份，0为1月，11为12月</span></span><br><span class="line"></span><br><span class="line">a.getFullYear();<span class="comment">//获取年份</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" data-id="ckwu5q82j000jbgdx9hvwazvx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/12/05/%E6%95%B0%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="tag">flex弹性布局</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS%E5%AE%9E%E4%BE%8B/" style="font-size: 10px;">CSS实例</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 10px;">flex弹性布局</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/05/%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

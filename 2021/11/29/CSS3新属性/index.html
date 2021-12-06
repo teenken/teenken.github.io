@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS新属性 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS3css3的新特性：  选择器 阴影 形状转换 2D和3D之间的转换 变形 动画（过渡动画，帧动画） 边框 背景（多重背景） 反射 文字 颜色 （rgba&#x2F; hsl&#x2F; hsla） 滤镜（filter） 弹性布局 多列布局 盒模型 web字体 媒体查询  CSS3并不是所有的浏览器都兼容，需要做兼容处理，通常的做法就是加厂商前缀  主流浏览器内核  Trident：IE内核  Webkit：S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS新属性">
+<meta property="og:url" content="http://example.com/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS3css3的新特性：  选择器 阴影 形状转换 2D和3D之间的转换 变形 动画（过渡动画，帧动画） 边框 背景（多重背景） 反射 文字 颜色 （rgba&#x2F; hsl&#x2F; hsla） 滤镜（filter） 弹性布局 多列布局 盒模型 web字体 媒体查询  CSS3并不是所有的浏览器都兼容，需要做兼容处理，通常的做法就是加厂商前缀  主流浏览器内核  Trident：IE内核  Webkit：S">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-29T07:56:36.000Z">
+<meta property="article:modified_time" content="2021-11-29T09:07:48.528Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS3新属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS新属性
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a>CSS3</h1><p>css3的新特性：</p>
+<ol>
+<li>选择器</li>
+<li>阴影</li>
+<li>形状转换 2D和3D之间的转换</li>
+<li>变形</li>
+<li>动画（过渡动画，帧动画）</li>
+<li>边框</li>
+<li>背景（多重背景）</li>
+<li>反射</li>
+<li>文字</li>
+<li>颜色 （rgba/ hsl/ hsla）</li>
+<li>滤镜（filter）</li>
+<li>弹性布局</li>
+<li>多列布局</li>
+<li>盒模型</li>
+<li>web字体</li>
+<li>媒体查询</li>
+</ol>
+<p>CSS3并不是所有的浏览器都兼容，需要做兼容处理，通常的做法就是加厂商前缀</p>
+<ol>
+<li><p>主流浏览器内核</p>
+<ol>
+<li><p>Trident：IE内核</p>
+</li>
+<li><p>Webkit：Safari和Chrome的内核</p>
+</li>
+<li><p>Gecko：FireFox的内核</p>
+</li>
+<li><p>Blink：Chrome和Opera的内核 （webkit的一个分支）</p>
+<p>目前国内的浏览器大多都是双核的，通常是IE内核+Chrome内核</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>2.厂商前缀</p>
+<ul>
+<li>IE对应的是-ms-</li>
+<li>Chrome and Safari : -webkit-</li>
+<li>FireFox: -moz-</li>
+<li>Opera: -o-</li>
+</ul>
+<p>3.CSS3 选择器</p>
+<ol>
+<li><p>属性选择器：</p>
+<p>[属性名]</p>
+<p>[属性名=属性值]</p>
+<p>[属性名^=属性值]</p>
+<p>[属性名$=属性值]</p>
+<p>[属性名*=属性值]</p>
+<p>​            /* class^ 表示以class开头 */</p>
+<p>​            /* class$ 表示以content结尾 */</p>
+<p>​            /* class* 表示中间包含class */</p>
+</li>
+<li><p>结构性伪类 ：</p>
+<ul>
+<li><p>root 匹配html标签   与body选择器效果一样</p>
+</li>
+<li><p>first-child 找的是第一个子元素</p>
+</li>
+<li><p>last-child 最后一个子元素</p>
+</li>
+<li><p>nth-last-child 倒数第n个子元素</p>
+</li>
+<li><p>nth-child 第几个子元素</p>
+</li>
+<li><p>```html<br>nth-last-child(3)<br>nth-last-child(2n)/表示偶数位<br>注意颜色的先后次序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   - 对连续的同类标签有效 如果不是连续的 我们需要用</span><br><span class="line"></span><br><span class="line">     :nth-of-type(n)</span><br><span class="line"></span><br><span class="line">     :nth-last-of-type(n)</span><br><span class="line"></span><br><span class="line">   - :only-child 父级中仅有一个目标标签，其他标签不允许存在，但在目标标签中可以有子标签</span><br><span class="line"></span><br><span class="line">   - :only-of-type 父级中仅有一个目标元素，其他标签允许存在</span><br><span class="line"></span><br><span class="line">   - :empty 没有元素 包含文本元素</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.目标伪类：</span><br><span class="line"></span><br><span class="line">```html</span><br><span class="line">&lt;a href=&quot;#jump1&quot;&gt;跳转1&lt;/a&gt;</span><br><span class="line">&lt;p id=&quot;jump1&quot;&gt;</span><br><span class="line">   文章的内容</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;!--实现页面内跳转--&gt;</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<p>:target 对目标标签操作 匹配url指向的元素</p>
+<p>4.UI元素状态伪类 （表单元素的伪类）</p>
+<ul>
+<li>:enabled 匹配form表单中可用状态的元素</li>
+<li>:disabled 匹配form表单中不可用状态的元素</li>
+<li>:checked 匹配form表单中选中状态的元素（只在opera浏览器中有效）</li>
+<li>:selection 文本选中时高亮显示</li>
+</ul>
+<p>5.否定伪类</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.container</span><span class="selector-pseudo">:not</span>(<span class="selector-tag">p</span>)&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>：blue；</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span><span class="comment">&lt;!--把container模块中不是p标签的背景颜色设置为蓝色--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>duanluo1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>duanluo2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span>&gt;</span>em<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>6.通用兄弟元素选择器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.div1</span>~<span class="selector-class">.div3</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">color</span>:red;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">clsaa</span>=<span class="string">&quot;test&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div1&quot;</span>&gt;</span>div1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div2&quot;</span>&gt;</span>div2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;div3&quot;</span>&gt;</span>div3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="CSS3文本"><a href="#CSS3文本" class="headerlink" title="CSS3文本"></a>CSS3文本</h1><ol>
+<li><p>文本阴影</p>
+<ul>
+<li><p>text-shadow ：横向偏移 纵向偏移 模糊 颜色 （主流浏览器都支持）</p>
+</li>
+<li><p>word-wrap : normal 只在允许的断字点换行 break-word 在长单词或url地址内部进行换行</p>
+</li>
+<li><p>word-break: 单词拆分 normal使用浏览器默认的换行</p>
+<p> break-all允许在单词内换行 keep-all只能在半角空格或连字符处换行</p>
+</li>
+<li><p>文本溢出</p>
+<p> 单行：text-overflow：clip （直接修剪） / ellipsis （会用省略号代替被修剪文本）/ string</p>
+<p> white-space：nowrap（不允许换行）</p>
+<p> 多行：</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css"><span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">	<span class="attribute">width</span>:<span class="number">300px</span>;</span></span><br><span class="line"><span class="css">	<span class="attribute">white-space</span>:nowrap;</span></span><br><span class="line"><span class="css">	<span class="attribute">text-overflow</span>:ellipsis;</span></span><br><span class="line"><span class="css">	<span class="attribute">overflow</span>:hidden;</span></span><br><span class="line"><span class="css">&#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--单行文本溢出--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>文章的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">p</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">width</span>:<span class="number">300px</span>;</span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>:-webkit-box;</span></span><br><span class="line"><span class="css">    -webkit-box-orient:vertical;</span></span><br><span class="line"><span class="css">    -webkit-line-clamp:行数;</span></span><br><span class="line"><span class="css">    <span class="attribute">overflow</span>:hidden;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="CSS3边框"><a href="#CSS3边框" class="headerlink" title="CSS3边框"></a>CSS3边框</h1><ol>
+<li><p>圆角边框：border-radius:</p>
+<p>四个方位值：top-left    top-right    bottom-left    bottom-right</p>
+<p>border-radius: 后面两个参数时，第一个为左上和右下，第二个为右上和左下</p>
+<p>后面三个参数时：第一个是左上，第二个是右上和左下，第三个是右下</p>
+<p>后面四个参数时，对应左上 右上 右下 左下</p>
+</li>
+<li><p>边框阴影</p>
+<p>box-shadow:水平偏移，垂直偏移，模糊距离（可选项），阴影尺寸（可选项），颜色（可选项）[inset]</p>
+</li>
+<li><p>边框图片：</p>
+<p>border-image: source(图片路径)  slice(边框向内偏移)  width(图片边框的宽度)    outset(边框图像区域超出边框的量)  repeat（平铺 round铺满。 stretch拉伸）</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="CSS背景"><a href="#CSS背景" class="headerlink" title="CSS背景"></a>CSS背景</h1><ul>
+<li><p>多重背景 background:背景色 背景图片 平铺方式 位置，背景色 背景图片 平铺方式 位置···</p>
+</li>
+<li><p>background-size 设置背景图片尺寸</p>
+<p>Background-size: 横向 纵向 contain 图像扩大至最大尺寸，完全适应内容区域</p>
+<p>cover 背景图扩展至足够大，完全覆盖背景区域</p>
+</li>
+<li><p>background-origin：指定背景图像的位置区域</p>
+<p>Padding-box:背景图相对于内边距框来定义</p>
+<p>content-box：以内容为基准加载背景图</p>
+<p>border-box：以border为 边框线</p>
+</li>
+<li><p>background-clip：设定背景图像的·绘制区域</p>
+</li>
+<li><p>渐变背景</p>
+</li>
+</ul>
+<h1 id="CSS3颜色"><a href="#CSS3颜色" class="headerlink" title="CSS3颜色"></a>CSS3颜色</h1><ul>
+<li>reba(r,g,b,a)   a代表的不透明度 越小越透明 ，取值0-1</li>
+<li>hsl(h,s,l)  h是色调，取值范围0-360  s表示饱和度 取值范围0-100%  l是亮度 0-100%</li>
+<li>hsla(h,s,l,a) h是色调，取值范围0-360  s表示饱和度 取值范围0-100%  l是亮度 0-100%  a是不饱和度</li>
+<li>Opacity:调整元素的不透明度 大多数情况下用于做元素的遮罩效果  取值范围为0-1</li>
+</ul>
+<p>inline-block导致模块之间的间隙要用margin-left来消除</p>
+<h1 id="CSS3渐变"><a href="#CSS3渐变" class="headerlink" title="CSS3渐变"></a>CSS3渐变</h1><ul>
+<li><p>线性渐变</p>
+<p>background：linear-gradient（方向或角度，颜色1，颜色2……）</p>
+<p>方向：</p>
+<p>to left</p>
+<p>to right</p>
+<p>to top</p>
+<p>to bottom</p>
+<p>to top left</p>
+<p>to top right</p>
+<p>to bottom left</p>
+<p>to bottom right</p>
+<p>角度：</p>
+<p>45度： 45deg</p>
+</li>
+<li><p>径向渐变 </p>
+<p>Background: radial-gradient (shape  size(渐变大小)  center,start color……,last-color );</p>
+<p>shape：ellipse（椭圆径向渐变，默认） circle（圆径向渐变）</p>
+<p>size：</p>
+<ul>
+<li>farthest-corner（渐变半径为从圆心到最远的角，默认） </li>
+<li>closest-side（渐变半径为从圆心到最近的边） </li>
+<li>closest-corner（渐变半径为从圆心到最近的角）</li>
+<li>farthest-side（渐变半径为从圆心到最远的边）</li>
+</ul>
+<p>位置：</p>
+<ul>
+<li><p>center：设置圆心在中心位置，默认</p>
+</li>
+<li><p>top：设置圆心在顶部位置</p>
+</li>
+<li><p>bottom：设置圆心在底部位置</p>
+</li>
+<li><p>at 圆心横坐标，圆心纵坐标：设定圆心位置在指定位置</p>
+</li>
+</ul>
+</li>
+<li><p>文字渐变</p>
+<p> Background-image:线性或者径向；</p>
+<p>-webkit-background-clip:text;</p>
+<p>-webkit-text-fill-color: transparent;</p>
+</li>
+</ul>
+<h1 id="CSS3盒子模型"><a href="#CSS3盒子模型" class="headerlink" title="CSS3盒子模型"></a>CSS3盒子模型</h1><p>box-sizing   允许以某种方式定义某种元素以适应指定的区域</p>
+<p>box-sizing：content-box   /    border-box 火狐需要厂商前缀</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwu5q82b0005bgdx0k1f0qfc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript基础--函数作用域，数据类型，break，continue
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML新属性</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="tag">flex弹性布局</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS%E5%AE%9E%E4%BE%8B/" style="font-size: 10px;">CSS实例</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 10px;">flex弹性布局</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/05/%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

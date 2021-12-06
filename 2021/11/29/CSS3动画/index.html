@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS动画 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="CSS3动画 盒子的变形  transform:translate(x,y)  或者把tranlate换成translateX （只在x方向做变换）translateY（只在y方向做变换）  transform:scale(x,y) x 方向变换x倍数  y方向变换y倍数x  缩放效果  scale（a）只带一个参数代表x，y都缩放a倍 还有scaleX scaleY  Transform:rot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS动画">
+<meta property="og:url" content="http://example.com/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS3动画 盒子的变形  transform:translate(x,y)  或者把tranlate换成translateX （只在x方向做变换）translateY（只在y方向做变换）  transform:scale(x,y) x 方向变换x倍数  y方向变换y倍数x  缩放效果  scale（a）只带一个参数代表x，y都缩放a倍 还有scaleX scaleY  Transform:rot">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-29T07:56:36.000Z">
+<meta property="article:modified_time" content="2021-11-29T09:07:31.414Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS3动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS动画
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h1><ol>
+<li><p>盒子的变形</p>
+<ul>
+<li><p>transform:translate(x,y)</p>
+</li>
+<li><p>或者把tranlate换成translateX （只在x方向做变换）translateY（只在y方向做变换）</p>
+</li>
+<li><p>transform:scale(x,y) x 方向变换x倍数  y方向变换y倍数x  缩放效果</p>
+</li>
+<li><p>scale（a）只带一个参数代表x，y都缩放a倍 还有scaleX scaleY</p>
+</li>
+<li><p>Transform:rotate(30deg)旋转30度</p>
+</li>
+<li><p>transform：skew(x-deg,y-deg)</p>
+</li>
+<li><p>transform:matrix(a,b,c,d,e,f)</p>
+<p>a    c    e</p>
+<p>b    d    f</p>
+<p>0    0    1</p>
+<p>a,d表示缩放（如果没有缩放，值设为1），b,c表示扭曲（如果没有扭曲，值为0）</p>
+<p>e,f表示位移（如果没有位移，值为0）</p>
+</li>
+<li><p>tranform-origin：（x，y）设置旋转基点</p>
+</li>
+<li><p>perspective  让子元素获得透视效果 主流浏览器都不支持，谷歌要加webkit，或者在长度后加单位</p>
+</li>
+<li><p>transform-style：flat/preserve-3d  规定如何在3D空间中呈现被嵌套的元素，必须与transform 属性一同使用 加在父元素标签内</p>
+</li>
+</ul>
+<ul>
+<li>rotateZ  rotateX rotateY</li>
+</ul>
+</li>
+</ol>
+<h1 id="CSS3过渡动画"><a href="#CSS3过渡动画" class="headerlink" title="CSS3过渡动画"></a>CSS3过渡动画</h1><ul>
+<li><p>transition-property</p>
+</li>
+<li><p>Transition-duration</p>
+</li>
+<li><p>Transition-timing-function</p>
+</li>
+<li><p>Transition-delay</p>
+</li>
+<li><p>Transition:可以使用属性：</p>
+<ul>
+<li><p>颜色：color background-color border-color outline-color</p>
+</li>
+<li><p>位置：background-position left right top bottom</p>
+</li>
+<li><p>长度：max-height min-height max-width min-width height width</p>
+<p>Border-width line-height text-indent vertical-align border-spacing</p>
+<p>Letter-spacing word-spacing</p>
+</li>
+<li><p>数字：opacity visibility z-index font-weight zoom </p>
+</li>
+<li><p>组合：text-shadow transform box-shadow clip</p>
+</li>
+<li><p>渐变:gradient</p>
+</li>
+</ul>
+</li>
+<li><p>Duration 动画持续时间：一般以秒或毫秒为单位s/ms</p>
+</li>
+<li><p>timing-function：动画函数 </p>
+<ul>
+<li><p>linear：匀速</p>
+</li>
+<li><p>ease：变速（慢快慢）</p>
+</li>
+<li><p>ease-in（由慢到快）</p>
+</li>
+<li><p>ease-out（由快到慢）</p>
+</li>
+<li><p>ease-in-out（慢开始，慢结束）</p>
+</li>
+<li><p>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</p>
+</li>
+</ul>
+</li>
+<li><p>delay动画延迟时间：s/ms为单位</p>
+</li>
+</ul>
+<h2 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h2><p>关键帧动画：</p>
+<ol>
+<li><p>设置关键帧：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(两个关键帧时)</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	from:&#123;样式表&#125;</span><br><span class="line">	to:&#123;&#125;</span><br><span class="line">&#125;（两个关键帧时）</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	25%:&#123;&#125;</span><br><span class="line">	60%:&#123;&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(多个关键帧时，注意百分比一般是升序值，也可以是倒序)</span><br></pre></td></tr></table></figure></li>
+<li><p>实施动画：</p>
+<p>Animation-name 动画名 来自于@keyframes定义的动画名</p>
+<p>Animation-duration 持续时间</p>
+<p>Animation-timing-function 动画函数</p>
+<ul>
+<li>linear：匀速（默认）</li>
+<li>ease：变速（慢快慢）</li>
+<li>ease-in（由慢到快）</li>
+<li>ease-out（由快到慢）</li>
+<li>ease-in-out（慢开始，慢结束）</li>
+<li>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</li>
+</ul>
+<p>Animation-delay 动画延迟时间</p>
+<p>Animation-iteration-count 动画循环播放的次数 number/infinite（无限循环） 默认1次</p>
+<p>Animation-direction 动画播放完后是否反向播放</p>
+<ul>
+<li>normal不反向（默认值）</li>
+<li>alternate 反向</li>
+</ul>
+<p>Animation-play-state 单独使用 动画播放或停止播放</p>
+<ul>
+<li>paused：停止播放</li>
+<li>running：播放（默认值）</li>
+</ul>
+<p>Animation: name duration timing-function iteration-count direction;</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" data-id="ckwu5q81t0000bgdxa9in2lqj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/12/05/%E6%95%B0%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML基本标签</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="tag">flex弹性布局</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS%E5%AE%9E%E4%BE%8B/" style="font-size: 10px;">CSS实例</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 10px;">flex弹性布局</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/05/%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

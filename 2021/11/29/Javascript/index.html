@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Javascript基础--变量及运算 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Javascript 三种引入方式：  通过script标签写在任意地方，但是一般写在body后面,避免js堵塞和影响操作DOM a标签的href中引入js文件 用script标签的src属性引入外部js文件   变量名命名规则：  变量名必须以字母、下划线 “_”、美元符号 “$” 开头，不能以数字开头 变量可以包含字母、数字、下划线和美元符号 不能使用 JavaScript 中的关键字做为变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript基础--变量及运算">
+<meta property="og:url" content="http://example.com/2021/11/29/Javascript/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Javascript 三种引入方式：  通过script标签写在任意地方，但是一般写在body后面,避免js堵塞和影响操作DOM a标签的href中引入js文件 用script标签的src属性引入外部js文件   变量名命名规则：  变量名必须以字母、下划线 “_”、美元符号 “$” 开头，不能以数字开头 变量可以包含字母、数字、下划线和美元符号 不能使用 JavaScript 中的关键字做为变量">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-29T07:56:36.000Z">
+<meta property="article:modified_time" content="2021-11-29T09:13:14.074Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Javascript">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/Javascript/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Javascript基础--变量及运算
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><ol>
+<li><p>三种引入方式：</p>
+<ul>
+<li>通过script标签写在任意地方，但是一般写在body后面,避免js堵塞和影响操作DOM</li>
+<li>a标签的href中引入js文件</li>
+<li>用script标签的src属性引入外部js文件</li>
+</ul>
+</li>
+<li><p>变量名命名规则：</p>
+<ul>
+<li>变量名必须以字母、下划线 “_”、美元符号 “$” 开头，不能以数字开头</li>
+<li>变量可以包含字母、数字、下划线和美元符号</li>
+<li>不能使用 JavaScript 中的关键字做为变量名</li>
+<li>变量名不能有空格</li>
+<li>变量名对大小写敏感，比如：name 和 Name 就是两个完全不同的变量</li>
+</ul>
+</li>
+<li><p>通过 var 关键字来声明变量，变量类型：</p>
+<ul>
+<li>number：浮点型，整数型都可以</li>
+<li>string：字符串型，需要引号</li>
+<li>boolean：true/false</li>
+<li>array：数组型</li>
+<li>object：对象型</li>
+</ul>
+</li>
+<li><p>值得注意的就是引号中如果是一个数字，它依然是 string 类型的。我们可以在控制台中通过 <code>typeof</code> 函数，来查看我们声明的变量是什么类型的</p>
+</li>
+<li><p> <code>num++</code> 和 <code>++num</code> 的区别，前者是先赋值再自增，后者是先自增再赋值</p>
+</li>
+<li><p>运算符号</p>
+<ul>
+<li>+</li>
+<li>-</li>
+<li>*</li>
+<li>/ 除 带小数 ex： 2/3=0.66666</li>
+<li>++</li>
+</ul>
+<hr>
+<ul>
+<li>%取余</li>
+<li>+=        x+=4 ————&gt; x=x+4</li>
+<li>-=</li>
+<li>*=</li>
+<li>/=</li>
+<li>===</li>
+<li>!==</li>
+<li>大于&gt;</li>
+<li>小于&lt;</li>
+<li>大于等于&gt;=</li>
+<li>小于等于&lt;=  输出的值为true/false</li>
+<li>&amp;&amp;</li>
+<li>||</li>
+<li>？：   ex：c？x：y 代表判断c的值是true还是false true的话返回x，false的话返回y</li>
+</ul>
+</li>
+<li><p>document.write :向body中写入一个内容</p>
+<p>Console.log在控制台输出一个内容</p>
+<p>typeof检查类型，输出结果是一个字符串</p>
+</li>
+<li><p>将js写入button的onclick属性中，写入a标签的href属性中</p>
+</li>
+<li><p>script标签一旦引入外部文件后，在其内写入的代码不会起作用</p>
+</li>
+<li><p>\表示转义符号 ， 加上引号就是字符串，不加就是变量</p>
+</li>
+<li><p>调用 XXX的YYY()方法就是：XXX.YYY()</p>
+</li>
+<li><p>将字符串转换为数字：</p>
+<p>parseInt 获得字符串中数字，可用parseInt（a，10）要求输出10进制</p>
+<p>parseFloat 获得字符串中小数</p>
+<p>Number</p>
+</li>
+<li><p>16进制0x开头 八进制0开头</p>
+</li>
+<li><p>数字—&gt;布尔 除了0和NaN，其余都是true</p>
+</li>
+<li><p>字符串—&gt;布尔， 除了空串，其余都是true</p>
+</li>
+<li><p>Null和undefined转换为布尔都是false</p>
+</li>
+<li><p>+可以实现字符串拼串效果，任何值和字符串做加法运算，都会先转换为字符串，然后再和字符串做拼串操作,可以利用这个来实现字符串的转换，将任意一个想要转换的加上空串就行</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/Javascript/" data-id="ckwu5q82f000dbgdxccix0gb9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript基础--if/switch及函数调用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Javascript基础--随机数，解构赋值</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="tag">flex弹性布局</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/CSS%E5%AE%9E%E4%BE%8B/" style="font-size: 10px;">CSS实例</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" style="font-size: 10px;">flex弹性布局</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/12/05/%E6%95%B0%E7%BB%84/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
+          </li>
+        
+          <li>
+            <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
