@@ -64,6 +64,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-DOM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/12/08/DOM/" class="article-date">
+  <time datetime="2021-12-08T02:11:35.770Z" itemprop="datePublished">2021-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><p>DOM:document object model  文本对象模型</p>
+<p>节点：</p>
+<ul>
+<li>文档节点：html文件</li>
+<li>元素节点：标签</li>
+<li>属性节点：标签的属性</li>
+<li>文本节点：标签内的文本</li>
+</ul>
+<h2 id="获取元素节点，通过document对象调用"><a href="#获取元素节点，通过document对象调用" class="headerlink" title="获取元素节点，通过document对象调用"></a>获取元素节点，通过document对象调用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">&quot;btn&quot;</span>);<span class="comment">//通过id属性调用一个元素节点对象		⚠️唯一</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementsByTagName();<span class="comment">//通过标签名获取一组元素节点对象  ⚠️一组，会返回一个类数组对象，将查到内容封装</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementsByName();<span class="comment">//通过Name属性来获取一组节点元素  	⚠️一组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.box1 .box2&quot;</span>);<span class="comment">//需要一个选择器的字符串作为参数，根据CSS选择器查询一个元素节点对象</span></span><br><span class="line"><span class="comment">//该方法总会返回唯一的一个元素，如果存在多个元素，则返回第一个</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelectorAll(<span class="string">&quot;.box1&quot;</span>);<span class="comment">//用法与上面相似，但是这个会将符合条件的元素封装在一个数组里返回</span></span><br></pre></td></tr></table></figure>
+
+<p>可以为按钮的对应事件绑定处理函数的形式来响应事件，这样当事件被触发时，可以调用对应的函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="comment">//可以在网页加载完成后执行代码</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//btn.innerHTML--&gt;得到元素内部内容</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>读取元素节点属性时，我们可以直接用  元素.id   元素.value 等等来读取</p>
+<p>但值得注意的是，唯独class不能使用上述方法，必须以 元素.className  这种方式来读取</p>
+<h2 id="获取元素节点的子节点"><a href="#获取元素节点的子节点" class="headerlink" title="获取元素节点的子节点"></a>获取元素节点的子节点</h2><ul>
+<li>getElementsByTagName()，返回当前标签名的后代节点</li>
+<li>childNodes，表示当前节点的所有子节点，包括文本节点在内⚠️，标签间空白也会被当成文本</li>
+<li>children，只包含子元素而不包含文本节点</li>
+<li>firstChild，表示当前节点的第一个节点，包括空白文本节点</li>
+<li>firstElementChild获取当前元素的第一个元素</li>
+<li>lastChild，表示当前节点的最后一个节点</li>
+</ul>
+<h2 id="获取父节点和兄弟节点"><a href="#获取父节点和兄弟节点" class="headerlink" title="获取父节点和兄弟节点"></a>获取父节点和兄弟节点</h2><ul>
+<li>parentNode 当前节点的父节点</li>
+<li>previousSibling 当前节点的前一个兄弟节点 previousElementSibling 获取前一个元素</li>
+<li>nextSibling 当前节点的后一个兄弟节点 nextElementSibling 获取后一个元素</li>
+</ul>
+<h2 id="DOM增删改"><a href="#DOM增删改" class="headerlink" title="DOM增删改"></a>DOM增删改</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.createElement();</span><br><span class="line"><span class="comment">//可以用来创建一个元素节点对象，需要一个标签名作为参数，根据标签名创建元素节点对象，并且返回所创建的对象</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.createTextNode();</span><br><span class="line"><span class="comment">//可以用来创建一个文本节点对象，需要一个文本的内容作为参数，根据内容创建文本节点，并且返回新的节点</span></span><br><span class="line"></span><br><span class="line">父节点.appendChild(子节点);</span><br><span class="line"><span class="comment">//向父元素中添加一个新的子节点</span></span><br><span class="line"></span><br><span class="line">父节点.replaceChild(新节点，旧节点)；</span><br><span class="line"><span class="comment">//将父元素中的一个子节点替换成另外一个子节点</span></span><br><span class="line"></span><br><span class="line">父节点.removeChild(子节点)；</span><br><span class="line"><span class="comment">//删除父节点中的一个子节点</span></span><br><span class="line"><span class="comment">//等同于 子节点.parentNode.removeChild(子节点)</span></span><br><span class="line"></span><br><span class="line">父节点.insertBefore(插入子节点，被插入子节点)；</span><br><span class="line"><span class="comment">//在子节点前加上一个子节点</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/12/08/DOM/" data-id="ckwzq2t1d0001i8dx6x396ahj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-函数对象，Date" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" class="article-date">
@@ -90,10 +148,33 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">a.getDate();<span class="comment">//获取a的 日  返回1～31</span></span><br><span class="line"></span><br><span class="line">a.getDay();<span class="comment">//返回0～6，0是周日</span></span><br><span class="line"></span><br><span class="line">a.getMonth();<span class="comment">//返回0～11，表月份，0为1月，11为12月</span></span><br><span class="line"></span><br><span class="line">a.getFullYear();<span class="comment">//获取年份</span></span><br></pre></td></tr></table></figure>
 
 
+
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><p>三种：String（），Number（），Boolean（）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>();<span class="comment">//可以将基本数据类型字符串转换为String对象</span></span><br><span class="line"><span class="built_in">Number</span>();<span class="comment">//可以将基本数据类型的数字转换为Number对象</span></span><br><span class="line"><span class="built_in">Boolean</span>();<span class="comment">//可以将基本数据类型的布尔值转换为Boolean对象</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="String的方法"><a href="#String的方法" class="headerlink" title="String的方法"></a>String的方法</h1><p>字符串是以字符数组的方式来进行存储</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"></span><br><span class="line">a.length;<span class="comment">//length方法返回字符串长度,length是属性，不是方法，直接用 a.length 调用</span></span><br><span class="line"></span><br><span class="line">a.charAt(<span class="number">1</span>);<span class="comment">//charAt()返回指定位置的字符,不方便，不如直接使用  a[]</span></span><br><span class="line"></span><br><span class="line">a.indexof(<span class="string">&quot;o&quot;</span>，<span class="number">1</span>);<span class="comment">//返回4，表示o第一次出现在索引为4的位置，如果没有找到字符，返回-1⚠️，可以指定第二个参数，从第二个参数位置开始查找</span></span><br><span class="line"></span><br><span class="line">a.lastIndexof(<span class="string">&quot;l&quot;</span>);<span class="comment">//与index用法一样，但是从后开始往前找</span></span><br><span class="line"></span><br><span class="line">a.split(<span class="string">&quot;e&quot;</span>);<span class="comment">//拆分一个字符串返回一个数组，根据split内的参数拆分</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><p>正则表达式用于定义一些字符串的规则，或者提取复合规则的字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;正则表达式&quot;</span>,<span class="string">&quot;匹配模式&quot;</span>);<span class="comment">//创建正则表达式,需要两个参数，且两个参数都是字符串</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="regexp">/ 正则表达式 /</span> 匹配模式</span><br><span class="line"></span><br><span class="line"><span class="comment">//正则表达式的检测方法，test(),	如果符合则返回true，否则返回false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;i&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="regexp">/a/i</span>;<span class="comment">//等同于上式，⚠️构造函数创造的话更加灵活，可以传递变量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">&quot;a&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = a.test(b);<span class="comment">//检查b中是否含有a元素，并返回值，严格区分大小写⚠️</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//可以传递匹配模式作为第二个参数，有i和g</span></span><br><span class="line"><span class="comment">//i:忽略大小写</span></span><br><span class="line"><span class="comment">//g:全局匹配模式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result1 = a.test(b,<span class="string">&quot;i&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="regexp">/a|b/</span>  <span class="comment">//只要含有a或者b就行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="regexp">/[ab]/</span> <span class="comment">//[ab] == a|b,,,,,,[a-z]表示a到z⚠️</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="regexp">/[^ab]/</span> <span class="comment">//找除了ab以外的元素，有就返回true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="正则表达式与字符串的方法"><a href="#正则表达式与字符串的方法" class="headerlink" title="正则表达式与字符串的方法"></a>正则表达式与字符串的方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;1a2b3c4d5e6f&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result1 = str.splict(<span class="regexp">/[a-z]/i</span>);   <span class="comment">//拆分数组，⚠️默认设置全局</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result2 = str.search(<span class="string">&quot;abc&quot;</span>);   <span class="comment">//在字符串中搜索，没有找到返回-1，找到返回第一次出现的索引,⚠️设置全局也没用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//match();可以根据正则表达式，从一个字符串中将符合条件的内容提取出来，</span></span><br><span class="line"><span class="comment">//默认match在找到第一个符合要求的内容后不再检索，我们可以设置全局匹配模式来找到所有符合内容的要求</span></span><br><span class="line"><span class="comment">//match会将返回的内容封装到一个数组中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result3 = str.replace(<span class="string">&quot;目标&quot;</span>,<span class="string">&quot;源&quot;</span>);<span class="comment">//可以替换为新内容，目标可以用正则表达式写比如删除字母：/[a-z]/ig</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a&#123;n&#125;/</span>;<span class="comment">//n是一个数字，表示找a并且必须连续n次的a</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a&#123;n,m&#125;/</span>;<span class="comment">//a必须出现n～m次</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a&#123;n,&#125;/</span><span class="regexp">//</span>a要出现n次以上       +代表&#123;<span class="number">1</span>,&#125;    *代表&#123;<span class="number">0</span>,&#125;    ?代表<span class="number">0</span>个或<span class="number">1</span>个</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result4 = reg.test(<span class="string">&quot;aaaabc&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="邮箱正则表达式："><a href="#邮箱正则表达式：" class="headerlink" title="邮箱正则表达式："></a>邮箱正则表达式：</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> email1 = <span class="string">&quot;teenyg@163.com&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> email2 = <span class="string">&quot;teenyg.g@163.com&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> email3 = <span class="string">&quot;teenyg.g@163.com.cn&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^\w&#123;3,&#125;(\.\w&#123;1,&#125;)*@([A-z0-9]&#123;1,&#125;)(\.[A-z]&#123;2,5&#125;)&#123;1,2&#125;$/</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>(reg.test(email));</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" data-id="ckwu5q82j000jbgdx9hvwazvx" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" data-id="ckwzq2t1q000di8dx55fjgvqu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/05/%E6%95%B0%E7%BB%84/" data-id="ckwu5q82l000lbgdxa797ezna" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/05/%E6%95%B0%E7%BB%84/" data-id="ckwzq2t1x000li8dx1sjsc0ea" class="article-share-link">Share</a>
       
       
     </footer>
@@ -277,344 +358,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" data-id="ckwu5q81t0000bgdxa9in2lqj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" data-id="ckwzq2t170000i8dx01o9g9xf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HTML基本标签" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" class="article-date">
-  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1><ol>
-<li><p>改变网址的代表图片：</p>
-<p>在head标签中使用link:favicon来实现</p>
-</li>
-<li><p>引入css样式三种方法：</p>
-<ul>
-<li>在heead标签中使用link:css</li>
-<li>在head标签中使用style标签进行包裹</li>
-<li>直接在语句中写入样式</li>
-</ul>
-</li>
-<li><p>br用来换行，单标签</p>
-</li>
-<li><p>hr用来生成一条水平线，单标签</p>
-</li>
-<li><p>a标签实现跳转功能，中间写入提示文字，在其中写入title属性，表示鼠标悬停时的信息</p>
-</li>
-<li><p>a标签的target属性中 _blank新建一个窗口, _self表示在当前窗口打开</p>
-</li>
-<li><p>img中的title属性显示鼠标悬停信息</p>
-</li>
-<li><p>span标签与div一样，但不会独占一行</p>
-</li>
-<li><p>i和em标签可以使文字倾斜，em还起强调作用</p>
-</li>
-<li><p>sub，sup分别设置下标和上标</p>
-</li>
-<li><p>表格属性中rowspan表示跨行，colspan表示跨列</p>
-</li>
-<li><p>表格分为：thead tbody tfoot tr表示一行 td表示一列</p>
-</li>
-</ol>
-<h1 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h1><ol>
-<li><p>表单常用属性： </p>
-<p>name：表单名称</p>
-<p>action ：表单数据提交的地方</p>
-<p>method：提交方法 有 get和 post两种</p>
-</li>
-<li><p>表单元素：</p>
-<ul>
-<li><p>input：输入，用type来具体定义：type:text/password/radio/checkbox/file/button/image/submit/reset</p>
-</li>
-<li><p>placeholder：提示文字：Username：Password：</p>
-</li>
-<li><p>value设置默认值</p>
-</li>
-<li><p>minlength 设置最少输入字符</p>
-</li>
-<li><p>maxlength</p>
-</li>
-<li><p>readonly只读</p>
-</li>
-<li><p>radio单选钮</p>
-</li>
-<li><p>checkbox复选框，后面加入选项</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>篮球<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>唱歌<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>打游戏<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>其他<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>file文件上传</p>
-</li>
-<li><p>button普通按钮，通常用来调用脚本文件</p>
-</li>
-<li><p>image 图片按钮，用法与button一样</p>
-</li>
-<li><p>submit提交按钮 用来提交数据</p>
-</li>
-<li><p>reset 重置按钮  清空还原为原来状态</p>
-</li>
-<li><p>textarea 文本域 多行文本框 用于大批量内容常用属性 id name cols rows placeholder提示文字 minlength maxlength </p>
-</li>
-<li><p>select选项 与optipn配合添加选项， 可以通过multiple实现多选 用command 用size可以调整选择框大小</p>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="文字处理"><a href="#文字处理" class="headerlink" title="文字处理"></a>文字处理</h1><ol>
-<li><p>text-transform 字母大小写 capitalize每个词第一个字母大写 uppercase全部大写 lowercase转换成小写</p>
-</li>
-<li><p>font-weight 加粗  100～900  700相当于bold 400相当于normal</p>
-</li>
-<li><p>伪类：表示元素的一种特殊状态</p>
-<ul>
-<li>a:link 初始状态</li>
-<li>a:visited 访问过后的状态</li>
-<li>a:hover 鼠标悬停时状态</li>
-<li>a:active 选择器用于选择活动链接</li>
-<li>focus 获得焦点</li>
-</ul>
-</li>
-<li><p>id选择器使用：[id=’’]{}</p>
-</li>
-<li><p>Float:initial 表示选择默认值，即none</p>
-</li>
-<li><p>清除浮动有三种方法：</p>
-<p>clean:left/right/both/none 清除左/右/都/都不   添加空标签清除浮动 </p>
-<p>overflow:hidden   清除浮动的父级 添加样式 超出部分隐藏 可以用来实现清除浮动</p>
-<p>：after 添加尾元素  父元素:after{content=””;display:block;clear:both;}</p>
-</li>
-<li><p>行级标签没有宽高，块级标签有</p>
-</li>
-<li><p>定位：position</p>
-<ul>
-<li>static默认值 没有定位</li>
-<li>relative 相对定位 占用文档流 可以设置偏移，但原来占据的位置不能填充其他元素</li>
-<li>absolute 脱离文档流，相对于body做偏移左上角（0，0）</li>
-<li>absolute与relative配合使用，相对于relative（父级）做移动</li>
-<li>fixed 脱离文档流，相对于（0，0）作位移</li>
-<li>z-index一般用在absolute 上 调整显示顺序</li>
-</ul>
-</li>
-<li><p>锚点：通过</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump1&quot;</span>&gt;</span>跳转1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump2&quot;</span>&gt;</span>跳转2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump3&quot;</span>&gt;</span>跳转3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump1&quot;</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump2&quot;</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump3&quot;</span>&gt;</span>段落3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" data-id="ckwu5q8230001bgdx5wy6c7k7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS应用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/" class="article-date">
-  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="下拉式菜单实现"><a href="#下拉式菜单实现" class="headerlink" title="下拉式菜单实现"></a>下拉式菜单实现</h1><h2 id="注意细节："><a href="#注意细节：" class="headerlink" title="注意细节："></a>注意细节：</h2><ul>
-<li>构建基本框架文本结构时注意</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;nav&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>以上代码可形成下拉项菜单</p>
-<ul>
-<li>如何让下拉式只有在鼠标悬停时才会出现下拉项？</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: initial;</span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: none; (让其消失，不显现)</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 鼠标悬停在li标签时，对下拉项样式进行改变*/</span></span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/CSS%E5%BA%94%E7%94%A8/" data-id="ckwu5q8280003bgdx0hj79q8s" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/">Javascript基础--函数作用域，数据类型，break，continue</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="break关键字可以用来退出循环和switch语句"><a href="#break关键字可以用来退出循环和switch语句" class="headerlink" title="break关键字可以用来退出循环和switch语句"></a>break关键字可以用来退出循环和switch语句</h1><p>不能在if语句中使用break和continue</p>
-<p>break会立即终止与他最近的循环</p>
-<p>终止指定的循环的话可以采用以下label标签的做法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hello:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;outer&quot;</span>+i);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;<span class="number">5</span>;j++)&#123;</span><br><span class="line">    <span class="comment">//break hello;直接终止外层循环hello</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;inside&quot;</span>+j)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>continue可以用来跳过当前这次循环，continue后面的语句都不执行</p>
-<p>同样我们可以用label标签来指定跳过某次循环</p>
-<p>console.time(“计时器名字”)，可以用来开启一个计时器，需要一个字符串作为参数</p>
-<p>Console.timeEnd(“计时器名字”)，用来终止一个计时器，也需要一个字符串为参数</p>
-<p>使用new关键字调用的函数，是构造函数的constructor 是专门用来创建对象的函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//obj现在就是一个对象</span></span><br><span class="line"><span class="comment">//对象.属性 = 属性值 // 添加一个属性</span></span><br></pre></td></tr></table></figure>
-
-<p>读取对象中没有的属性不会报错，返回undefined</p>
-<p>修改操作，删除操作：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">&quot;sakura.ken&quot;</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br><span class="line">obj.weight = <span class="string">&quot;80kg&quot;</span>;<span class="comment">//以上都是添加属性</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&quot;ken&quot;</span>;<span class="comment">//修改属性</span></span><br><span class="line"><span class="keyword">delete</span> obj.age ;<span class="comment">//删除操作 delete 对象.属性名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> na = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj[na]);<span class="comment">//使用[]来调用变量</span></span><br></pre></td></tr></table></figure>
-
-<p>检查一个对象里面是否有某个属性：in 操作符</p>
-<p>有 则返回true ，否则返回false</p>
-<p>“属性名” in  对象</p>
-<p>Js的变量都是保存到栈内存中的，基本变量直接在栈内存中存储，值与值之间独立存在。</p>
-<p>对象是保存在堆内存中的，每创建一个新对象，就开辟一个新空间，此时变量保存的事吉祥的内存地址。</p>
-<h2 id="基本数据类型保存的是值，引用数据类型保存的是地址"><a href="#基本数据类型保存的是值，引用数据类型保存的是地址" class="headerlink" title="基本数据类型保存的是值，引用数据类型保存的是地址"></a>基本数据类型保存的是值，引用数据类型保存的是地址</h2><p>两个引用数据类型相比较，比较的是对象的内存地址，如果对象一摸一样，地址不一样也会返回false</p>
-<p>函数也是一个对象，创建函数,用typeof检查函数的类型为function</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>();<span class="comment">//很少使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="comment">//函数声明</span></span><br><span class="line"><span class="comment">//注意区别 这里的add和add()</span></span><br><span class="line"><span class="comment">//add是函数的内容</span></span><br><span class="line"><span class="comment">//add()是函数返回值</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>对象的属性值也可以是函数，一个函数成为了一个对象的属性值，那么称这个函数为对象的方法，调用函数时称为调用对象的方法</p>
-<p>枚举对象中的属性 for…in</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> 变量 <span class="keyword">in</span> 对象)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( 变量 );<span class="comment">//对象里面有几个属性就执行几次循环体，且每次执行时都会将属性的名字赋值给变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(obj[n]);<span class="comment">//obj是对象，n是变量，该语句输出对象的所有属性名，值得注意的是⚠️：变量不能用obj.变量来获取，而是[]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>作用域：全局作用域 与 函数作用域</p>
-<p>全局作用域在窗口打开时创建，在窗口关闭时关闭，全局作用域中有一个全局对象window，</p>
-<p>创建的全局变量都会保存在window的属性中，创建的函数都会作为window对象的方法保存</p>
-<p>变量的声明提前：使用var关键字声明函数会在所有代码执行前被声明，但是还没有赋值</p>
-<p>函数的声明提前：直接使用函数声明形式，会在所有代码执行前声明并赋值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种声明方式只能在函数被赋值之后调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种函数可以被提前调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在函数中不使用声明定义的变量会成为全局变量，可以修改全局变量的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a  = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line">  a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//此时a会输出20而不是10</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>定义形参就相当于在函数的作用域中声明了变量</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> e = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//如果function add(e) 此处相当于声明了一个变量e</span></span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line">add() =&gt;<span class="number">10</span>;</span><br><span class="line">add(<span class="number">12</span>) =&gt;<span class="number">12</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>注意⚠️</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert (d);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">10</span>;<span class="comment">//结果会弹出undfined而不是10，var提前声明但不赋值，走到var = 10这时才给它赋值</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>this</p>
-<p>解析在调用函数时每次都会向函数内部传递一个隐含参数，这个参数就是this，this指向的是一个对象，函数执行的上下文对象</p>
-<p>根据函数调用的方式不同，this将会指向不同的对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun();<span class="comment">//以函数形式调用，this指向window</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Person();<span class="comment">//以构造函数调用时，this就是创建的新对象</span></span><br><span class="line">obj.myName();<span class="comment">//以方法形式调用，this指向调用方法的对象</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);<span class="comment">//this.name可以让程序更加灵活⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;tianyu&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;jianjian&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;mama&quot;</span>;</span><br><span class="line"></span><br><span class="line">fun();</span><br><span class="line">obj1.sayName();</span><br></pre></td></tr></table></figure>
-
-
-
-<p>批量生产对象：该方法创建的对象都是Object类型，导致无法区分多个对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  obj.a = a;</span><br><span class="line">  obj.b = b;</span><br><span class="line">  obj.c = c;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = createPerson(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);<span class="comment">//输出为&#123;a: &#x27;a&#x27;, b: &#x27;b&#x27;, c: &#x27;c&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>针对上面问题，我们可以创建构造函数，创建构造函数与普通函数没区别，首字母大写⚠️，只是调用方式不同</p>
-<p>普通函数是直接调用，构造函数则是使用new关键字进行调用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;tianyu&quot;</span>;<span class="comment">//为obj1中添加属性及属性值，⚠️this指向obj1⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> Person();<span class="comment">//obj1此时是个对象</span></span><br></pre></td></tr></table></figure>
-
-<p>构造函数创建后：</p>
-<ol>
-<li>立即创建一个新的对象</li>
-<li>将新建的对象设置为函数中this</li>
-<li>执行函数中的代码</li>
-<li>返回新建的对象</li>
-</ol>
-<p>对象 instanceof  构造函数 判断一个对象是否是一个类的实例，是则返回true 否则false</p>
-<p>原型prototype，我们所创建的每一个函数都会有一个隐含对象，如果普通函数调用propoto属性没有任何用，</p>
-<p>当函数以构造函数调用时它所创建的对象中都会有一个隐含属性，可以通过以下方式调用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">add</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> mov1 = <span class="keyword">new</span> add();</span><br><span class="line"><span class="keyword">var</span> mov2 = <span class="keyword">new</span> add();<span class="comment">//构造函数创建对象</span></span><br><span class="line"><span class="built_in">console</span>.log( mov1.__proto__ == mov2.__proto__);<span class="comment">//__proto__来调用,返回的结果是true</span></span><br></pre></td></tr></table></figure>
-
-<p>原型对象就是一个公共的区域，所有的相同类的构造函数及实例都可以访问到该区域</p>
-<p>我们可以将实例所共有的属性设置到原型对象中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add.prototype.a = <span class="number">3</span>;<span class="comment">//接着上段代码，在add的原型对象中添加了一个属性a</span></span><br><span class="line">add.prototype.sayHello()&#123;</span><br><span class="line">  alert(<span class="string">&quot;hello&quot;</span>);<span class="comment">//在原型对象中添加方法</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"><a href="#我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype" class="headerlink" title="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"></a>我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype</h3><p>在检查一个对象里有没有某个属性时，我们有两种方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;name&quot;</span> <span class="keyword">in</span> add;<span class="comment">//检查对象自身以及⚠️原型对象中是否有该属性</span></span><br><span class="line">add.hasOwnProperty(<span class="string">&quot;name&quot;</span>);<span class="comment">//检查对象自身中是否有该属性</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/JS%E5%9F%BA%E7%A1%80/" data-id="ckwu5q8290004bgdx64dt3d0a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -843,7 +590,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwu5q82b0005bgdx0k1f0qfc" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwzq2t1h0003i8dxc37p89ht" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
@@ -1089,7 +836,292 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwu5q82c0008bgdx3uut4krk" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwzq2t1j0004i8dxaxwaboc7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/">Javascript基础--函数作用域，数据类型，break，continue</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="break关键字可以用来退出循环和switch语句"><a href="#break关键字可以用来退出循环和switch语句" class="headerlink" title="break关键字可以用来退出循环和switch语句"></a>break关键字可以用来退出循环和switch语句</h1><p>不能在if语句中使用break和continue</p>
+<p>break会立即终止与他最近的循环</p>
+<p>终止指定的循环的话可以采用以下label标签的做法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hello:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;outer&quot;</span>+i);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;<span class="number">5</span>;j++)&#123;</span><br><span class="line">    <span class="comment">//break hello;直接终止外层循环hello</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;inside&quot;</span>+j)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>continue可以用来跳过当前这次循环，continue后面的语句都不执行</p>
+<p>同样我们可以用label标签来指定跳过某次循环</p>
+<p>console.time(“计时器名字”)，可以用来开启一个计时器，需要一个字符串作为参数</p>
+<p>Console.timeEnd(“计时器名字”)，用来终止一个计时器，也需要一个字符串为参数</p>
+<p>使用new关键字调用的函数，是构造函数的constructor 是专门用来创建对象的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//obj现在就是一个对象</span></span><br><span class="line"><span class="comment">//对象.属性 = 属性值 // 添加一个属性</span></span><br></pre></td></tr></table></figure>
+
+<p>读取对象中没有的属性不会报错，返回undefined</p>
+<p>修改操作，删除操作：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">&quot;sakura.ken&quot;</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br><span class="line">obj.weight = <span class="string">&quot;80kg&quot;</span>;<span class="comment">//以上都是添加属性</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&quot;ken&quot;</span>;<span class="comment">//修改属性</span></span><br><span class="line"><span class="keyword">delete</span> obj.age ;<span class="comment">//删除操作 delete 对象.属性名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> na = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj[na]);<span class="comment">//使用[]来调用变量</span></span><br></pre></td></tr></table></figure>
+
+<p>检查一个对象里面是否有某个属性：in 操作符</p>
+<p>有 则返回true ，否则返回false</p>
+<p>“属性名” in  对象</p>
+<p>Js的变量都是保存到栈内存中的，基本变量直接在栈内存中存储，值与值之间独立存在。</p>
+<p>对象是保存在堆内存中的，每创建一个新对象，就开辟一个新空间，此时变量保存的事吉祥的内存地址。</p>
+<h2 id="基本数据类型保存的是值，引用数据类型保存的是地址"><a href="#基本数据类型保存的是值，引用数据类型保存的是地址" class="headerlink" title="基本数据类型保存的是值，引用数据类型保存的是地址"></a>基本数据类型保存的是值，引用数据类型保存的是地址</h2><p>两个引用数据类型相比较，比较的是对象的内存地址，如果对象一摸一样，地址不一样也会返回false</p>
+<p>函数也是一个对象，创建函数,用typeof检查函数的类型为function</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>();<span class="comment">//很少使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="comment">//函数声明</span></span><br><span class="line"><span class="comment">//注意区别 这里的add和add()</span></span><br><span class="line"><span class="comment">//add是函数的内容</span></span><br><span class="line"><span class="comment">//add()是函数返回值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>对象的属性值也可以是函数，一个函数成为了一个对象的属性值，那么称这个函数为对象的方法，调用函数时称为调用对象的方法</p>
+<p>枚举对象中的属性 for…in</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> 变量 <span class="keyword">in</span> 对象)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( 变量 );<span class="comment">//对象里面有几个属性就执行几次循环体，且每次执行时都会将属性的名字赋值给变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(obj[n]);<span class="comment">//obj是对象，n是变量，该语句输出对象的所有属性名，值得注意的是⚠️：变量不能用obj.变量来获取，而是[]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>作用域：全局作用域 与 函数作用域</p>
+<p>全局作用域在窗口打开时创建，在窗口关闭时关闭，全局作用域中有一个全局对象window，</p>
+<p>创建的全局变量都会保存在window的属性中，创建的函数都会作为window对象的方法保存</p>
+<p>变量的声明提前：使用var关键字声明函数会在所有代码执行前被声明，但是还没有赋值</p>
+<p>函数的声明提前：直接使用函数声明形式，会在所有代码执行前声明并赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种声明方式只能在函数被赋值之后调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种函数可以被提前调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在函数中不使用声明定义的变量会成为全局变量，可以修改全局变量的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a  = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line">  a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//此时a会输出20而不是10</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>定义形参就相当于在函数的作用域中声明了变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> e = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//如果function add(e) 此处相当于声明了一个变量e</span></span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line">add() =&gt;<span class="number">10</span>;</span><br><span class="line">add(<span class="number">12</span>) =&gt;<span class="number">12</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>注意⚠️</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert (d);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">10</span>;<span class="comment">//结果会弹出undfined而不是10，var提前声明但不赋值，走到var = 10这时才给它赋值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>this</p>
+<p>解析在调用函数时每次都会向函数内部传递一个隐含参数，这个参数就是this，this指向的是一个对象，函数执行的上下文对象</p>
+<p>根据函数调用的方式不同，this将会指向不同的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun();<span class="comment">//以函数形式调用，this指向window</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Person();<span class="comment">//以构造函数调用时，this就是创建的新对象</span></span><br><span class="line">obj.myName();<span class="comment">//以方法形式调用，this指向调用方法的对象</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);<span class="comment">//this.name可以让程序更加灵活⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;tianyu&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;jianjian&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;mama&quot;</span>;</span><br><span class="line"></span><br><span class="line">fun();</span><br><span class="line">obj1.sayName();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>批量生产对象：该方法创建的对象都是Object类型，导致无法区分多个对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  obj.a = a;</span><br><span class="line">  obj.b = b;</span><br><span class="line">  obj.c = c;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = createPerson(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);<span class="comment">//输出为&#123;a: &#x27;a&#x27;, b: &#x27;b&#x27;, c: &#x27;c&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>针对上面问题，我们可以创建构造函数，创建构造函数与普通函数没区别，首字母大写⚠️，只是调用方式不同</p>
+<p>普通函数是直接调用，构造函数则是使用new关键字进行调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;tianyu&quot;</span>;<span class="comment">//为obj1中添加属性及属性值，⚠️this指向obj1⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> Person();<span class="comment">//obj1此时是个对象</span></span><br></pre></td></tr></table></figure>
+
+<p>构造函数创建后：</p>
+<ol>
+<li>立即创建一个新的对象</li>
+<li>将新建的对象设置为函数中this</li>
+<li>执行函数中的代码</li>
+<li>返回新建的对象</li>
+</ol>
+<p>对象 instanceof  构造函数 判断一个对象是否是一个类的实例，是则返回true 否则false</p>
+<p>原型prototype，我们所创建的每一个函数都会有一个隐含对象，如果普通函数调用propoto属性没有任何用，</p>
+<p>当函数以构造函数调用时它所创建的对象中都会有一个隐含属性，可以通过以下方式调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">add</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> mov1 = <span class="keyword">new</span> add();</span><br><span class="line"><span class="keyword">var</span> mov2 = <span class="keyword">new</span> add();<span class="comment">//构造函数创建对象</span></span><br><span class="line"><span class="built_in">console</span>.log( mov1.__proto__ == mov2.__proto__);<span class="comment">//__proto__来调用,返回的结果是true</span></span><br></pre></td></tr></table></figure>
+
+<p>原型对象就是一个公共的区域，所有的相同类的构造函数及实例都可以访问到该区域</p>
+<p>我们可以将实例所共有的属性设置到原型对象中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add.prototype.a = <span class="number">3</span>;<span class="comment">//接着上段代码，在add的原型对象中添加了一个属性a</span></span><br><span class="line">add.prototype.sayHello()&#123;</span><br><span class="line">  alert(<span class="string">&quot;hello&quot;</span>);<span class="comment">//在原型对象中添加方法</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"><a href="#我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype" class="headerlink" title="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"></a>我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype</h3><p>在检查一个对象里有没有某个属性时，我们有两种方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;name&quot;</span> <span class="keyword">in</span> add;<span class="comment">//检查对象自身以及⚠️原型对象中是否有该属性</span></span><br><span class="line">add.hasOwnProperty(<span class="string">&quot;name&quot;</span>);<span class="comment">//检查对象自身中是否有该属性</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/JS%E5%9F%BA%E7%A1%80/" data-id="ckwzq2t1k0005i8dxaalv7d53" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML基本标签" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HTML基本标签"><a href="#HTML基本标签" class="headerlink" title="HTML基本标签"></a>HTML基本标签</h1><ol>
+<li><p>改变网址的代表图片：</p>
+<p>在head标签中使用link:favicon来实现</p>
+</li>
+<li><p>引入css样式三种方法：</p>
+<ul>
+<li>在heead标签中使用link:css</li>
+<li>在head标签中使用style标签进行包裹</li>
+<li>直接在语句中写入样式</li>
+</ul>
+</li>
+<li><p>br用来换行，单标签</p>
+</li>
+<li><p>hr用来生成一条水平线，单标签</p>
+</li>
+<li><p>a标签实现跳转功能，中间写入提示文字，在其中写入title属性，表示鼠标悬停时的信息</p>
+</li>
+<li><p>a标签的target属性中 _blank新建一个窗口, _self表示在当前窗口打开</p>
+</li>
+<li><p>img中的title属性显示鼠标悬停信息</p>
+</li>
+<li><p>span标签与div一样，但不会独占一行</p>
+</li>
+<li><p>i和em标签可以使文字倾斜，em还起强调作用</p>
+</li>
+<li><p>sub，sup分别设置下标和上标</p>
+</li>
+<li><p>表格属性中rowspan表示跨行，colspan表示跨列</p>
+</li>
+<li><p>表格分为：thead tbody tfoot tr表示一行 td表示一列</p>
+</li>
+</ol>
+<h1 id="form表单"><a href="#form表单" class="headerlink" title="form表单"></a>form表单</h1><ol>
+<li><p>表单常用属性： </p>
+<p>name：表单名称</p>
+<p>action ：表单数据提交的地方</p>
+<p>method：提交方法 有 get和 post两种</p>
+</li>
+<li><p>表单元素：</p>
+<ul>
+<li><p>input：输入，用type来具体定义：type:text/password/radio/checkbox/file/button/image/submit/reset</p>
+</li>
+<li><p>placeholder：提示文字：Username：Password：</p>
+</li>
+<li><p>value设置默认值</p>
+</li>
+<li><p>minlength 设置最少输入字符</p>
+</li>
+<li><p>maxlength</p>
+</li>
+<li><p>readonly只读</p>
+</li>
+<li><p>radio单选钮</p>
+</li>
+<li><p>checkbox复选框，后面加入选项</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>篮球<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>唱歌<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>打游戏<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span>&gt;</span>其他<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>file文件上传</p>
+</li>
+<li><p>button普通按钮，通常用来调用脚本文件</p>
+</li>
+<li><p>image 图片按钮，用法与button一样</p>
+</li>
+<li><p>submit提交按钮 用来提交数据</p>
+</li>
+<li><p>reset 重置按钮  清空还原为原来状态</p>
+</li>
+<li><p>textarea 文本域 多行文本框 用于大批量内容常用属性 id name cols rows placeholder提示文字 minlength maxlength </p>
+</li>
+<li><p>select选项 与optipn配合添加选项， 可以通过multiple实现多选 用command 用size可以调整选择框大小</p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="文字处理"><a href="#文字处理" class="headerlink" title="文字处理"></a>文字处理</h1><ol>
+<li><p>text-transform 字母大小写 capitalize每个词第一个字母大写 uppercase全部大写 lowercase转换成小写</p>
+</li>
+<li><p>font-weight 加粗  100～900  700相当于bold 400相当于normal</p>
+</li>
+<li><p>伪类：表示元素的一种特殊状态</p>
+<ul>
+<li>a:link 初始状态</li>
+<li>a:visited 访问过后的状态</li>
+<li>a:hover 鼠标悬停时状态</li>
+<li>a:active 选择器用于选择活动链接</li>
+<li>focus 获得焦点</li>
+</ul>
+</li>
+<li><p>id选择器使用：[id=’’]{}</p>
+</li>
+<li><p>Float:initial 表示选择默认值，即none</p>
+</li>
+<li><p>清除浮动有三种方法：</p>
+<p>clean:left/right/both/none 清除左/右/都/都不   添加空标签清除浮动 </p>
+<p>overflow:hidden   清除浮动的父级 添加样式 超出部分隐藏 可以用来实现清除浮动</p>
+<p>：after 添加尾元素  父元素:after{content=””;display:block;clear:both;}</p>
+</li>
+<li><p>行级标签没有宽高，块级标签有</p>
+</li>
+<li><p>定位：position</p>
+<ul>
+<li>static默认值 没有定位</li>
+<li>relative 相对定位 占用文档流 可以设置偏移，但原来占据的位置不能填充其他元素</li>
+<li>absolute 脱离文档流，相对于body做偏移左上角（0，0）</li>
+<li>absolute与relative配合使用，相对于relative（父级）做移动</li>
+<li>fixed 脱离文档流，相对于（0，0）作位移</li>
+<li>z-index一般用在absolute 上 调整显示顺序</li>
+</ul>
+</li>
+<li><p>锚点：通过</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump1&quot;</span>&gt;</span>跳转1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump2&quot;</span>&gt;</span>跳转2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#jump3&quot;</span>&gt;</span>跳转3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump1&quot;</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump2&quot;</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;jump3&quot;</span>&gt;</span>段落3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" data-id="ckwzq2t1m0008i8dx2r1363qf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
@@ -1160,7 +1192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/" data-id="ckwu5q82d000abgdx9uejb9sz" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/" data-id="ckwzq2t1n0009i8dx3alog9vc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
@@ -1172,9 +1204,9 @@
 
 
   
-    <article id="post-Javascript" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Javascript基础day2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/11/29/Javascript/" class="article-date">
+    <a href="/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/" class="article-date">
   <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
 </a>
     
@@ -1186,7 +1218,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/Javascript/">Javascript基础--变量及运算</a>
+      <a class="article-title" href="/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/">Javascript基础--随机数，解构赋值</a>
     </h1>
   
 
@@ -1194,95 +1226,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><ol>
-<li><p>三种引入方式：</p>
-<ul>
-<li>通过script标签写在任意地方，但是一般写在body后面,避免js堵塞和影响操作DOM</li>
-<li>a标签的href中引入js文件</li>
-<li>用script标签的src属性引入外部js文件</li>
-</ul>
+        <h1 id="Javascript基础day2"><a href="#Javascript基础day2" class="headerlink" title="Javascript基础day2"></a>Javascript基础day2</h1><ol>
+<li><p>产生随机数：Math.random 产生0到1的随机小数</p>
+<p>Math.floor向下取整，产生范围随机数方法：    </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random*(Max-Min+<span class="number">1</span>)+Min)<span class="comment">//产生min到max之间的随机整数</span></span><br></pre></td></tr></table></figure></li>
+<li><p>三元运算符：  a ? b : c</p>
+<p>a是判断条件</p>
+<p>b是a为真时做的操作</p>
+<p>c是a为错时做的操作</p>
+<p>可以叠加使用</p>
 </li>
-<li><p>变量名命名规则：</p>
-<ul>
-<li>变量名必须以字母、下划线 “_”、美元符号 “$” 开头，不能以数字开头</li>
-<li>变量可以包含字母、数字、下划线和美元符号</li>
-<li>不能使用 JavaScript 中的关键字做为变量名</li>
-<li>变量名不能有空格</li>
-<li>变量名对大小写敏感，比如：name 和 Name 就是两个完全不同的变量</li>
-</ul>
+<li><p>const分配给变量的对象依旧是可以变的，只能防止重新分配</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">			s = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];<span class="comment">//无效</span></span><br><span class="line">			s[<span class="number">2</span>] = <span class="number">45</span>;<span class="comment">//操作有效改变</span></span><br></pre></td></tr></table></figure></li>
+<li><p>确保数据不会改变的函数 Object.freeze( 数据  );</p>
 </li>
-<li><p>通过 var 关键字来声明变量，变量类型：</p>
-<ul>
-<li>number：浮点型，整数型都可以</li>
-<li>string：字符串型，需要引号</li>
-<li>boolean：true/false</li>
-<li>array：数组型</li>
-<li>object：对象型</li>
-</ul>
+<li><p>箭头函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> magic = <span class="function">() =&gt;</span> <span class="keyword">new</span> Data();</span><br><span class="line"><span class="comment">//上下两个等效</span></span><br><span class="line"><span class="keyword">const</span> magic = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Data();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>contact函数连接数组，array1.contact(array2)，返回一个array1和array2相连的数组</p>
 </li>
-<li><p>值得注意的就是引号中如果是一个数字，它依然是 string 类型的。我们可以在控制台中通过 <code>typeof</code> 函数，来查看我们声明的变量是什么类型的</p>
+<li><p>展开操作符 …</p>
 </li>
-<li><p> <code>num++</code> 和 <code>++num</code> 的区别，前者是先赋值再自增，后者是先自增再赋值</p>
-</li>
-<li><p>运算符号</p>
-<ul>
-<li>+</li>
-<li>-</li>
-<li>*</li>
-<li>/ 除 带小数 ex： 2/3=0.66666</li>
-<li>++</li>
-</ul>
-<hr>
-<ul>
-<li>%取余</li>
-<li>+=        x+=4 ————&gt; x=x+4</li>
-<li>-=</li>
-<li>*=</li>
-<li>/=</li>
-<li>===</li>
-<li>!==</li>
-<li>大于&gt;</li>
-<li>小于&lt;</li>
-<li>大于等于&gt;=</li>
-<li>小于等于&lt;=  输出的值为true/false</li>
-<li>&amp;&amp;</li>
-<li>||</li>
-<li>？：   ex：c？x：y 代表判断c的值是true还是false true的话返回x，false的话返回y</li>
-</ul>
-</li>
-<li><p>document.write :向body中写入一个内容</p>
-<p>Console.log在控制台输出一个内容</p>
-<p>typeof检查类型，输出结果是一个字符串</p>
-</li>
-<li><p>将js写入button的onclick属性中，写入a标签的href属性中</p>
-</li>
-<li><p>script标签一旦引入外部文件后，在其内写入的代码不会起作用</p>
-</li>
-<li><p>\表示转义符号 ， 加上引号就是字符串，不加就是变量</p>
-</li>
-<li><p>调用 XXX的YYY()方法就是：XXX.YYY()</p>
-</li>
-<li><p>将字符串转换为数字：</p>
-<p>parseInt 获得字符串中数字，可用parseInt（a，10）要求输出10进制</p>
-<p>parseFloat 获得字符串中小数</p>
-<p>Number</p>
-</li>
-<li><p>16进制0x开头 八进制0开头</p>
-</li>
-<li><p>数字—&gt;布尔 除了0和NaN，其余都是true</p>
-</li>
-<li><p>字符串—&gt;布尔， 除了空串，其余都是true</p>
-</li>
-<li><p>Null和undefined转换为布尔都是false</p>
-</li>
-<li><p>+可以实现字符串拼串效果，任何值和字符串做加法运算，都会先转换为字符串，然后再和字符串做拼串操作,可以利用这个来实现字符串的转换，将任意一个想要转换的加上空串就行</p>
-</li>
+<li><p>解构赋值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span> : <span class="string">&quot;John&quot;</span>,<span class="attr">age</span> : <span class="number">34</span>&#125;</span><br><span class="line"><span class="keyword">const</span> name = user.name;</span><br><span class="line"><span class="keyword">const</span> age = user.age;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">const</span> &#123;name,age&#125; = user;</span><br><span class="line"><span class="keyword">const</span> &#123;userName,userAge&#125; =user;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/Javascript/" data-id="ckwu5q82f000dbgdxccix0gb9" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/" data-id="ckwzq2t1p000ci8dx2zezdrpg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
@@ -1344,6 +1315,10 @@
       <ul>
         
           <li>
+            <a href="/2021/12/08/DOM/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/">(no title)</a>
           </li>
         
@@ -1356,11 +1331,7 @@
           </li>
         
           <li>
-            <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+            <a href="/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/">CSS新属性</a>
           </li>
         
       </ul>

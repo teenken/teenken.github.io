@@ -64,9 +64,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Javascript基础day2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CSS应用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/" class="article-date">
+    <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/" class="article-date">
   <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/">Javascript基础--随机数，解构赋值</a>
+      <a class="article-title" href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
     </h1>
   
 
@@ -86,34 +86,144 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Javascript基础day2"><a href="#Javascript基础day2" class="headerlink" title="Javascript基础day2"></a>Javascript基础day2</h1><ol>
-<li><p>产生随机数：Math.random 产生0到1的随机小数</p>
-<p>Math.floor向下取整，产生范围随机数方法：    </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random*(Max-Min+<span class="number">1</span>)+Min)<span class="comment">//产生min到max之间的随机整数</span></span><br></pre></td></tr></table></figure></li>
-<li><p>三元运算符：  a ? b : c</p>
-<p>a是判断条件</p>
-<p>b是a为真时做的操作</p>
-<p>c是a为错时做的操作</p>
-<p>可以叠加使用</p>
+        <h1 id="下拉式菜单实现"><a href="#下拉式菜单实现" class="headerlink" title="下拉式菜单实现"></a>下拉式菜单实现</h1><h2 id="注意细节："><a href="#注意细节：" class="headerlink" title="注意细节："></a>注意细节：</h2><ul>
+<li>构建基本框架文本结构时注意</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;nav&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码可形成下拉项菜单</p>
+<ul>
+<li>如何让下拉式只有在鼠标悬停时才会出现下拉项？</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: initial;</span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: none; (让其消失，不显现)</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 鼠标悬停在li标签时，对下拉项样式进行改变*/</span></span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/CSS%E5%BA%94%E7%94%A8/" data-id="ckwzq2t1t000fi8dxgoom47zz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/Javascript/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/Javascript/">Javascript基础--变量及运算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h1><ol>
+<li><p>三种引入方式：</p>
+<ul>
+<li>通过script标签写在任意地方，但是一般写在body后面,避免js堵塞和影响操作DOM</li>
+<li>a标签的href中引入js文件</li>
+<li>用script标签的src属性引入外部js文件</li>
+</ul>
 </li>
-<li><p>const分配给变量的对象依旧是可以变的，只能防止重新分配</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">			s = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];<span class="comment">//无效</span></span><br><span class="line">			s[<span class="number">2</span>] = <span class="number">45</span>;<span class="comment">//操作有效改变</span></span><br></pre></td></tr></table></figure></li>
-<li><p>确保数据不会改变的函数 Object.freeze( 数据  );</p>
+<li><p>变量名命名规则：</p>
+<ul>
+<li>变量名必须以字母、下划线 “_”、美元符号 “$” 开头，不能以数字开头</li>
+<li>变量可以包含字母、数字、下划线和美元符号</li>
+<li>不能使用 JavaScript 中的关键字做为变量名</li>
+<li>变量名不能有空格</li>
+<li>变量名对大小写敏感，比如：name 和 Name 就是两个完全不同的变量</li>
+</ul>
 </li>
-<li><p>箭头函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> magic = <span class="function">() =&gt;</span> <span class="keyword">new</span> Data();</span><br><span class="line"><span class="comment">//上下两个等效</span></span><br><span class="line"><span class="keyword">const</span> magic = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Data();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>contact函数连接数组，array1.contact(array2)，返回一个array1和array2相连的数组</p>
+<li><p>通过 var 关键字来声明变量，变量类型：</p>
+<ul>
+<li>number：浮点型，整数型都可以</li>
+<li>string：字符串型，需要引号</li>
+<li>boolean：true/false</li>
+<li>array：数组型</li>
+<li>object：对象型</li>
+</ul>
 </li>
-<li><p>展开操作符 …</p>
+<li><p>值得注意的就是引号中如果是一个数字，它依然是 string 类型的。我们可以在控制台中通过 <code>typeof</code> 函数，来查看我们声明的变量是什么类型的</p>
 </li>
-<li><p>解构赋值：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span> : <span class="string">&quot;John&quot;</span>,<span class="attr">age</span> : <span class="number">34</span>&#125;</span><br><span class="line"><span class="keyword">const</span> name = user.name;</span><br><span class="line"><span class="keyword">const</span> age = user.age;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">const</span> &#123;name,age&#125; = user;</span><br><span class="line"><span class="keyword">const</span> &#123;userName,userAge&#125; =user;</span><br></pre></td></tr></table></figure></li>
+<li><p> <code>num++</code> 和 <code>++num</code> 的区别，前者是先赋值再自增，后者是先自增再赋值</p>
+</li>
+<li><p>运算符号</p>
+<ul>
+<li>+</li>
+<li>-</li>
+<li>*</li>
+<li>/ 除 带小数 ex： 2/3=0.66666</li>
+<li>++</li>
+</ul>
+<hr>
+<ul>
+<li>%取余</li>
+<li>+=        x+=4 ————&gt; x=x+4</li>
+<li>-=</li>
+<li>*=</li>
+<li>/=</li>
+<li>===</li>
+<li>!==</li>
+<li>大于&gt;</li>
+<li>小于&lt;</li>
+<li>大于等于&gt;=</li>
+<li>小于等于&lt;=  输出的值为true/false</li>
+<li>&amp;&amp;</li>
+<li>||</li>
+<li>？：   ex：c？x：y 代表判断c的值是true还是false true的话返回x，false的话返回y</li>
+</ul>
+</li>
+<li><p>document.write :向body中写入一个内容</p>
+<p>Console.log在控制台输出一个内容</p>
+<p>typeof检查类型，输出结果是一个字符串</p>
+</li>
+<li><p>将js写入button的onclick属性中，写入a标签的href属性中</p>
+</li>
+<li><p>script标签一旦引入外部文件后，在其内写入的代码不会起作用</p>
+</li>
+<li><p>\表示转义符号 ， 加上引号就是字符串，不加就是变量</p>
+</li>
+<li><p>调用 XXX的YYY()方法就是：XXX.YYY()</p>
+</li>
+<li><p>将字符串转换为数字：</p>
+<p>parseInt 获得字符串中数字，可用parseInt（a，10）要求输出10进制</p>
+<p>parseFloat 获得字符串中小数</p>
+<p>Number</p>
+</li>
+<li><p>16进制0x开头 八进制0开头</p>
+</li>
+<li><p>数字—&gt;布尔 除了0和NaN，其余都是true</p>
+</li>
+<li><p>字符串—&gt;布尔， 除了空串，其余都是true</p>
+</li>
+<li><p>Null和undefined转换为布尔都是false</p>
+</li>
+<li><p>+可以实现字符串拼串效果，任何值和字符串做加法运算，都会先转换为字符串，然后再和字符串做拼串操作,可以利用这个来实现字符串的转换，将任意一个想要转换的加上空串就行</p>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/" data-id="ckwu5q82g000fbgdx6jkv8x8j" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/Javascript/" data-id="ckwzq2t1u000hi8dx3nuef1ye" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
@@ -333,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7-%E5%B8%83%E5%B1%80/" data-id="ckwu5q82i000hbgdxf8zi3vtc" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7-%E5%B8%83%E5%B1%80/" data-id="ckwzq2t1w000ji8dx274a8dem" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flex%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80/" rel="tag">flex弹性布局</a></li></ul>
@@ -395,6 +505,10 @@
       <ul>
         
           <li>
+            <a href="/2021/12/08/DOM/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/">(no title)</a>
           </li>
         
@@ -407,11 +521,7 @@
           </li>
         
           <li>
-            <a href="/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/">HTML基本标签</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+            <a href="/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/">CSS新属性</a>
           </li>
         
       </ul>
