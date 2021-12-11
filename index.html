@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/08/DOM/" data-id="ckwzq2t1d0001i8dx6x396ahj" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/08/DOM/" data-id="ckx16buj10004xtdxc84m98jt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" data-id="ckwzq2t1q000di8dx55fjgvqu" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/06/%E5%87%BD%E6%95%B0%E5%AF%B9%E8%B1%A1%EF%BC%8CDate/" data-id="ckx16bujc000jxtdxh4dzagsj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,160 +209,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/05/%E6%95%B0%E7%BB%84/" data-id="ckwzq2t1x000li8dx1sjsc0ea" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/05/%E6%95%B0%E7%BB%84/" data-id="ckx16bujd000lxtdxhh8ba6y1" class="article-share-link">Share</a>
       
       
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS3动画" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" class="article-date">
-  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h1><ol>
-<li><p>盒子的变形</p>
-<ul>
-<li><p>transform:translate(x,y)</p>
-</li>
-<li><p>或者把tranlate换成translateX （只在x方向做变换）translateY（只在y方向做变换）</p>
-</li>
-<li><p>transform:scale(x,y) x 方向变换x倍数  y方向变换y倍数x  缩放效果</p>
-</li>
-<li><p>scale（a）只带一个参数代表x，y都缩放a倍 还有scaleX scaleY</p>
-</li>
-<li><p>Transform:rotate(30deg)旋转30度</p>
-</li>
-<li><p>transform：skew(x-deg,y-deg)</p>
-</li>
-<li><p>transform:matrix(a,b,c,d,e,f)</p>
-<p>a    c    e</p>
-<p>b    d    f</p>
-<p>0    0    1</p>
-<p>a,d表示缩放（如果没有缩放，值设为1），b,c表示扭曲（如果没有扭曲，值为0）</p>
-<p>e,f表示位移（如果没有位移，值为0）</p>
-</li>
-<li><p>tranform-origin：（x，y）设置旋转基点</p>
-</li>
-<li><p>perspective  让子元素获得透视效果 主流浏览器都不支持，谷歌要加webkit，或者在长度后加单位</p>
-</li>
-<li><p>transform-style：flat/preserve-3d  规定如何在3D空间中呈现被嵌套的元素，必须与transform 属性一同使用 加在父元素标签内</p>
-</li>
-</ul>
-<ul>
-<li>rotateZ  rotateX rotateY</li>
-</ul>
-</li>
-</ol>
-<h1 id="CSS3过渡动画"><a href="#CSS3过渡动画" class="headerlink" title="CSS3过渡动画"></a>CSS3过渡动画</h1><ul>
-<li><p>transition-property</p>
-</li>
-<li><p>Transition-duration</p>
-</li>
-<li><p>Transition-timing-function</p>
-</li>
-<li><p>Transition-delay</p>
-</li>
-<li><p>Transition:可以使用属性：</p>
-<ul>
-<li><p>颜色：color background-color border-color outline-color</p>
-</li>
-<li><p>位置：background-position left right top bottom</p>
-</li>
-<li><p>长度：max-height min-height max-width min-width height width</p>
-<p>Border-width line-height text-indent vertical-align border-spacing</p>
-<p>Letter-spacing word-spacing</p>
-</li>
-<li><p>数字：opacity visibility z-index font-weight zoom </p>
-</li>
-<li><p>组合：text-shadow transform box-shadow clip</p>
-</li>
-<li><p>渐变:gradient</p>
-</li>
-</ul>
-</li>
-<li><p>Duration 动画持续时间：一般以秒或毫秒为单位s/ms</p>
-</li>
-<li><p>timing-function：动画函数 </p>
-<ul>
-<li><p>linear：匀速</p>
-</li>
-<li><p>ease：变速（慢快慢）</p>
-</li>
-<li><p>ease-in（由慢到快）</p>
-</li>
-<li><p>ease-out（由快到慢）</p>
-</li>
-<li><p>ease-in-out（慢开始，慢结束）</p>
-</li>
-<li><p>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</p>
-</li>
-</ul>
-</li>
-<li><p>delay动画延迟时间：s/ms为单位</p>
-</li>
-</ul>
-<h2 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h2><p>关键帧动画：</p>
-<ol>
-<li><p>设置关键帧：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(两个关键帧时)</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	from:&#123;样式表&#125;</span><br><span class="line">	to:&#123;&#125;</span><br><span class="line">&#125;（两个关键帧时）</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	25%:&#123;&#125;</span><br><span class="line">	60%:&#123;&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(多个关键帧时，注意百分比一般是升序值，也可以是倒序)</span><br></pre></td></tr></table></figure></li>
-<li><p>实施动画：</p>
-<p>Animation-name 动画名 来自于@keyframes定义的动画名</p>
-<p>Animation-duration 持续时间</p>
-<p>Animation-timing-function 动画函数</p>
-<ul>
-<li>linear：匀速（默认）</li>
-<li>ease：变速（慢快慢）</li>
-<li>ease-in（由慢到快）</li>
-<li>ease-out（由快到慢）</li>
-<li>ease-in-out（慢开始，慢结束）</li>
-<li>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</li>
-</ul>
-<p>Animation-delay 动画延迟时间</p>
-<p>Animation-iteration-count 动画循环播放的次数 number/infinite（无限循环） 默认1次</p>
-<p>Animation-direction 动画播放完后是否反向播放</p>
-<ul>
-<li>normal不反向（默认值）</li>
-<li>alternate 反向</li>
-</ul>
-<p>Animation-play-state 单独使用 动画播放或停止播放</p>
-<ul>
-<li>paused：停止播放</li>
-<li>running：播放（默认值）</li>
-</ul>
-<p>Animation: name duration timing-function iteration-count direction;</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" data-id="ckwzq2t170000i8dx01o9g9xf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
-
     </footer>
   </div>
   
@@ -590,10 +439,210 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwzq2t1h0003i8dxc37p89ht" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckx16buir0000xtdxfcvm239e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS3动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="CSS3动画"><a href="#CSS3动画" class="headerlink" title="CSS3动画"></a>CSS3动画</h1><ol>
+<li><p>盒子的变形</p>
+<ul>
+<li><p>transform:translate(x,y)</p>
+</li>
+<li><p>或者把tranlate换成translateX （只在x方向做变换）translateY（只在y方向做变换）</p>
+</li>
+<li><p>transform:scale(x,y) x 方向变换x倍数  y方向变换y倍数x  缩放效果</p>
+</li>
+<li><p>scale（a）只带一个参数代表x，y都缩放a倍 还有scaleX scaleY</p>
+</li>
+<li><p>Transform:rotate(30deg)旋转30度</p>
+</li>
+<li><p>transform：skew(x-deg,y-deg)</p>
+</li>
+<li><p>transform:matrix(a,b,c,d,e,f)</p>
+<p>a    c    e</p>
+<p>b    d    f</p>
+<p>0    0    1</p>
+<p>a,d表示缩放（如果没有缩放，值设为1），b,c表示扭曲（如果没有扭曲，值为0）</p>
+<p>e,f表示位移（如果没有位移，值为0）</p>
+</li>
+<li><p>tranform-origin：（x，y）设置旋转基点</p>
+</li>
+<li><p>perspective  让子元素获得透视效果 主流浏览器都不支持，谷歌要加webkit，或者在长度后加单位</p>
+</li>
+<li><p>transform-style：flat/preserve-3d  规定如何在3D空间中呈现被嵌套的元素，必须与transform 属性一同使用 加在父元素标签内</p>
+</li>
+</ul>
+<ul>
+<li>rotateZ  rotateX rotateY</li>
+</ul>
+</li>
+</ol>
+<h1 id="CSS3过渡动画"><a href="#CSS3过渡动画" class="headerlink" title="CSS3过渡动画"></a>CSS3过渡动画</h1><ul>
+<li><p>transition-property</p>
+</li>
+<li><p>Transition-duration</p>
+</li>
+<li><p>Transition-timing-function</p>
+</li>
+<li><p>Transition-delay</p>
+</li>
+<li><p>Transition:可以使用属性：</p>
+<ul>
+<li><p>颜色：color background-color border-color outline-color</p>
+</li>
+<li><p>位置：background-position left right top bottom</p>
+</li>
+<li><p>长度：max-height min-height max-width min-width height width</p>
+<p>Border-width line-height text-indent vertical-align border-spacing</p>
+<p>Letter-spacing word-spacing</p>
+</li>
+<li><p>数字：opacity visibility z-index font-weight zoom </p>
+</li>
+<li><p>组合：text-shadow transform box-shadow clip</p>
+</li>
+<li><p>渐变:gradient</p>
+</li>
+</ul>
+</li>
+<li><p>Duration 动画持续时间：一般以秒或毫秒为单位s/ms</p>
+</li>
+<li><p>timing-function：动画函数 </p>
+<ul>
+<li><p>linear：匀速</p>
+</li>
+<li><p>ease：变速（慢快慢）</p>
+</li>
+<li><p>ease-in（由慢到快）</p>
+</li>
+<li><p>ease-out（由快到慢）</p>
+</li>
+<li><p>ease-in-out（慢开始，慢结束）</p>
+</li>
+<li><p>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</p>
+</li>
+</ul>
+</li>
+<li><p>delay动画延迟时间：s/ms为单位</p>
+</li>
+</ul>
+<h2 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h2><p>关键帧动画：</p>
+<ol>
+<li><p>设置关键帧：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(两个关键帧时)</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	from:&#123;样式表&#125;</span><br><span class="line">	to:&#123;&#125;</span><br><span class="line">&#125;（两个关键帧时）</span><br><span class="line"></span><br><span class="line">@keyframes 动画名&#123;</span><br><span class="line">	0%:&#123;样式表&#125;</span><br><span class="line">	25%:&#123;&#125;</span><br><span class="line">	60%:&#123;&#125;</span><br><span class="line">	100%:&#123;&#125;</span><br><span class="line">&#125;(多个关键帧时，注意百分比一般是升序值，也可以是倒序)</span><br></pre></td></tr></table></figure></li>
+<li><p>实施动画：</p>
+<p>Animation-name 动画名 来自于@keyframes定义的动画名</p>
+<p>Animation-duration 持续时间</p>
+<p>Animation-timing-function 动画函数</p>
+<ul>
+<li>linear：匀速（默认）</li>
+<li>ease：变速（慢快慢）</li>
+<li>ease-in（由慢到快）</li>
+<li>ease-out（由快到慢）</li>
+<li>ease-in-out（慢开始，慢结束）</li>
+<li>cubic-bezier(n,n,n,n):自行设定变速，n的值在0到1之间</li>
+</ul>
+<p>Animation-delay 动画延迟时间</p>
+<p>Animation-iteration-count 动画循环播放的次数 number/infinite（无限循环） 默认1次</p>
+<p>Animation-direction 动画播放完后是否反向播放</p>
+<ul>
+<li>normal不反向（默认值）</li>
+<li>alternate 反向</li>
+</ul>
+<p>Animation-play-state 单独使用 动画播放或停止播放</p>
+<ul>
+<li>paused：停止播放</li>
+<li>running：播放（默认值）</li>
+</ul>
+<p>Animation: name duration timing-function iteration-count direction;</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/" data-id="ckx16buiw0001xtdx0ftlf2yp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS应用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/CSS%E5%BA%94%E7%94%A8/">CSS应用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="下拉式菜单实现"><a href="#下拉式菜单实现" class="headerlink" title="下拉式菜单实现"></a>下拉式菜单实现</h1><h2 id="注意细节："><a href="#注意细节：" class="headerlink" title="注意细节："></a>注意细节：</h2><ul>
+<li>构建基本框架文本结构时注意</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;nav&#x27;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span>&gt;</span>homepage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码可形成下拉项菜单</p>
+<ul>
+<li>如何让下拉式只有在鼠标悬停时才会出现下拉项？</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">float</span>: initial;</span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: none; (让其消失，不显现)</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.nav</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">ul</span> <span class="selector-tag">li</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="comment">/* 鼠标悬停在li标签时，对下拉项样式进行改变*/</span></span></span><br><span class="line"><span class="css">    <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/CSS%E5%BA%94%E7%94%A8/" data-id="ckx16buiz0003xtdxgphi3yke" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS%E5%AE%9E%E4%BE%8B/" rel="tag">CSS实例</a></li></ul>
 
     </footer>
   </div>
@@ -836,146 +885,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckwzq2t1j0004i8dxaxwaboc7" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/HTML5%E6%96%B0%E5%B1%9E%E6%80%A7/" data-id="ckx16buj20005xtdx2rjr8loe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/">Javascript基础--函数作用域，数据类型，break，continue</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="break关键字可以用来退出循环和switch语句"><a href="#break关键字可以用来退出循环和switch语句" class="headerlink" title="break关键字可以用来退出循环和switch语句"></a>break关键字可以用来退出循环和switch语句</h1><p>不能在if语句中使用break和continue</p>
-<p>break会立即终止与他最近的循环</p>
-<p>终止指定的循环的话可以采用以下label标签的做法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hello:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;outer&quot;</span>+i);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;<span class="number">5</span>;j++)&#123;</span><br><span class="line">    <span class="comment">//break hello;直接终止外层循环hello</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;inside&quot;</span>+j)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>continue可以用来跳过当前这次循环，continue后面的语句都不执行</p>
-<p>同样我们可以用label标签来指定跳过某次循环</p>
-<p>console.time(“计时器名字”)，可以用来开启一个计时器，需要一个字符串作为参数</p>
-<p>Console.timeEnd(“计时器名字”)，用来终止一个计时器，也需要一个字符串为参数</p>
-<p>使用new关键字调用的函数，是构造函数的constructor 是专门用来创建对象的函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//obj现在就是一个对象</span></span><br><span class="line"><span class="comment">//对象.属性 = 属性值 // 添加一个属性</span></span><br></pre></td></tr></table></figure>
-
-<p>读取对象中没有的属性不会报错，返回undefined</p>
-<p>修改操作，删除操作：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">&quot;sakura.ken&quot;</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br><span class="line">obj.weight = <span class="string">&quot;80kg&quot;</span>;<span class="comment">//以上都是添加属性</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&quot;ken&quot;</span>;<span class="comment">//修改属性</span></span><br><span class="line"><span class="keyword">delete</span> obj.age ;<span class="comment">//删除操作 delete 对象.属性名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> na = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj[na]);<span class="comment">//使用[]来调用变量</span></span><br></pre></td></tr></table></figure>
-
-<p>检查一个对象里面是否有某个属性：in 操作符</p>
-<p>有 则返回true ，否则返回false</p>
-<p>“属性名” in  对象</p>
-<p>Js的变量都是保存到栈内存中的，基本变量直接在栈内存中存储，值与值之间独立存在。</p>
-<p>对象是保存在堆内存中的，每创建一个新对象，就开辟一个新空间，此时变量保存的事吉祥的内存地址。</p>
-<h2 id="基本数据类型保存的是值，引用数据类型保存的是地址"><a href="#基本数据类型保存的是值，引用数据类型保存的是地址" class="headerlink" title="基本数据类型保存的是值，引用数据类型保存的是地址"></a>基本数据类型保存的是值，引用数据类型保存的是地址</h2><p>两个引用数据类型相比较，比较的是对象的内存地址，如果对象一摸一样，地址不一样也会返回false</p>
-<p>函数也是一个对象，创建函数,用typeof检查函数的类型为function</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>();<span class="comment">//很少使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="comment">//函数声明</span></span><br><span class="line"><span class="comment">//注意区别 这里的add和add()</span></span><br><span class="line"><span class="comment">//add是函数的内容</span></span><br><span class="line"><span class="comment">//add()是函数返回值</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>对象的属性值也可以是函数，一个函数成为了一个对象的属性值，那么称这个函数为对象的方法，调用函数时称为调用对象的方法</p>
-<p>枚举对象中的属性 for…in</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> 变量 <span class="keyword">in</span> 对象)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( 变量 );<span class="comment">//对象里面有几个属性就执行几次循环体，且每次执行时都会将属性的名字赋值给变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(obj[n]);<span class="comment">//obj是对象，n是变量，该语句输出对象的所有属性名，值得注意的是⚠️：变量不能用obj.变量来获取，而是[]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>作用域：全局作用域 与 函数作用域</p>
-<p>全局作用域在窗口打开时创建，在窗口关闭时关闭，全局作用域中有一个全局对象window，</p>
-<p>创建的全局变量都会保存在window的属性中，创建的函数都会作为window对象的方法保存</p>
-<p>变量的声明提前：使用var关键字声明函数会在所有代码执行前被声明，但是还没有赋值</p>
-<p>函数的声明提前：直接使用函数声明形式，会在所有代码执行前声明并赋值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种声明方式只能在函数被赋值之后调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种函数可以被提前调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在函数中不使用声明定义的变量会成为全局变量，可以修改全局变量的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a  = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line">  a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//此时a会输出20而不是10</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>定义形参就相当于在函数的作用域中声明了变量</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> e = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//如果function add(e) 此处相当于声明了一个变量e</span></span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line">add() =&gt;<span class="number">10</span>;</span><br><span class="line">add(<span class="number">12</span>) =&gt;<span class="number">12</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>注意⚠️</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert (d);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">10</span>;<span class="comment">//结果会弹出undfined而不是10，var提前声明但不赋值，走到var = 10这时才给它赋值</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>this</p>
-<p>解析在调用函数时每次都会向函数内部传递一个隐含参数，这个参数就是this，this指向的是一个对象，函数执行的上下文对象</p>
-<p>根据函数调用的方式不同，this将会指向不同的对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun();<span class="comment">//以函数形式调用，this指向window</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Person();<span class="comment">//以构造函数调用时，this就是创建的新对象</span></span><br><span class="line">obj.myName();<span class="comment">//以方法形式调用，this指向调用方法的对象</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);<span class="comment">//this.name可以让程序更加灵活⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;tianyu&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;jianjian&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;mama&quot;</span>;</span><br><span class="line"></span><br><span class="line">fun();</span><br><span class="line">obj1.sayName();</span><br></pre></td></tr></table></figure>
-
-
-
-<p>批量生产对象：该方法创建的对象都是Object类型，导致无法区分多个对象</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  obj.a = a;</span><br><span class="line">  obj.b = b;</span><br><span class="line">  obj.c = c;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = createPerson(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);<span class="comment">//输出为&#123;a: &#x27;a&#x27;, b: &#x27;b&#x27;, c: &#x27;c&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>针对上面问题，我们可以创建构造函数，创建构造函数与普通函数没区别，首字母大写⚠️，只是调用方式不同</p>
-<p>普通函数是直接调用，构造函数则是使用new关键字进行调用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;tianyu&quot;</span>;<span class="comment">//为obj1中添加属性及属性值，⚠️this指向obj1⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> Person();<span class="comment">//obj1此时是个对象</span></span><br></pre></td></tr></table></figure>
-
-<p>构造函数创建后：</p>
-<ol>
-<li>立即创建一个新的对象</li>
-<li>将新建的对象设置为函数中this</li>
-<li>执行函数中的代码</li>
-<li>返回新建的对象</li>
-</ol>
-<p>对象 instanceof  构造函数 判断一个对象是否是一个类的实例，是则返回true 否则false</p>
-<p>原型prototype，我们所创建的每一个函数都会有一个隐含对象，如果普通函数调用propoto属性没有任何用，</p>
-<p>当函数以构造函数调用时它所创建的对象中都会有一个隐含属性，可以通过以下方式调用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">add</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> mov1 = <span class="keyword">new</span> add();</span><br><span class="line"><span class="keyword">var</span> mov2 = <span class="keyword">new</span> add();<span class="comment">//构造函数创建对象</span></span><br><span class="line"><span class="built_in">console</span>.log( mov1.__proto__ == mov2.__proto__);<span class="comment">//__proto__来调用,返回的结果是true</span></span><br></pre></td></tr></table></figure>
-
-<p>原型对象就是一个公共的区域，所有的相同类的构造函数及实例都可以访问到该区域</p>
-<p>我们可以将实例所共有的属性设置到原型对象中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add.prototype.a = <span class="number">3</span>;<span class="comment">//接着上段代码，在add的原型对象中添加了一个属性a</span></span><br><span class="line">add.prototype.sayHello()&#123;</span><br><span class="line">  alert(<span class="string">&quot;hello&quot;</span>);<span class="comment">//在原型对象中添加方法</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"><a href="#我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype" class="headerlink" title="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"></a>我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype</h3><p>在检查一个对象里有没有某个属性时，我们有两种方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;name&quot;</span> <span class="keyword">in</span> add;<span class="comment">//检查对象自身以及⚠️原型对象中是否有该属性</span></span><br><span class="line">add.hasOwnProperty(<span class="string">&quot;name&quot;</span>);<span class="comment">//检查对象自身中是否有该属性</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/JS%E5%9F%BA%E7%A1%80/" data-id="ckwzq2t1k0005i8dxaalv7d53" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -1121,10 +1034,146 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" data-id="ckwzq2t1m0008i8dx2r1363qf" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/HTML%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE/" data-id="ckx16buj40008xtdx61b85itt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JS基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/11/29/JS%E5%9F%BA%E7%A1%80/">Javascript基础--函数作用域，数据类型，break，continue</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="break关键字可以用来退出循环和switch语句"><a href="#break关键字可以用来退出循环和switch语句" class="headerlink" title="break关键字可以用来退出循环和switch语句"></a>break关键字可以用来退出循环和switch语句</h1><p>不能在if语句中使用break和continue</p>
+<p>break会立即终止与他最近的循环</p>
+<p>终止指定的循环的话可以采用以下label标签的做法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hello:</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;outer&quot;</span>+i);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>;j&lt;<span class="number">5</span>;j++)&#123;</span><br><span class="line">    <span class="comment">//break hello;直接终止外层循环hello</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;inside&quot;</span>+j)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>continue可以用来跳过当前这次循环，continue后面的语句都不执行</p>
+<p>同样我们可以用label标签来指定跳过某次循环</p>
+<p>console.time(“计时器名字”)，可以用来开启一个计时器，需要一个字符串作为参数</p>
+<p>Console.timeEnd(“计时器名字”)，用来终止一个计时器，也需要一个字符串为参数</p>
+<p>使用new关键字调用的函数，是构造函数的constructor 是专门用来创建对象的函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="comment">//obj现在就是一个对象</span></span><br><span class="line"><span class="comment">//对象.属性 = 属性值 // 添加一个属性</span></span><br></pre></td></tr></table></figure>
+
+<p>读取对象中没有的属性不会报错，返回undefined</p>
+<p>修改操作，删除操作：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">obj.name = <span class="string">&quot;sakura.ken&quot;</span>;</span><br><span class="line">obj.age = <span class="number">18</span>;</span><br><span class="line">obj.weight = <span class="string">&quot;80kg&quot;</span>;<span class="comment">//以上都是添加属性</span></span><br><span class="line"></span><br><span class="line">obj.name = <span class="string">&quot;ken&quot;</span>;<span class="comment">//修改属性</span></span><br><span class="line"><span class="keyword">delete</span> obj.age ;<span class="comment">//删除操作 delete 对象.属性名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> na = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log( obj[na]);<span class="comment">//使用[]来调用变量</span></span><br></pre></td></tr></table></figure>
+
+<p>检查一个对象里面是否有某个属性：in 操作符</p>
+<p>有 则返回true ，否则返回false</p>
+<p>“属性名” in  对象</p>
+<p>Js的变量都是保存到栈内存中的，基本变量直接在栈内存中存储，值与值之间独立存在。</p>
+<p>对象是保存在堆内存中的，每创建一个新对象，就开辟一个新空间，此时变量保存的事吉祥的内存地址。</p>
+<h2 id="基本数据类型保存的是值，引用数据类型保存的是地址"><a href="#基本数据类型保存的是值，引用数据类型保存的是地址" class="headerlink" title="基本数据类型保存的是值，引用数据类型保存的是地址"></a>基本数据类型保存的是值，引用数据类型保存的是地址</h2><p>两个引用数据类型相比较，比较的是对象的内存地址，如果对象一摸一样，地址不一样也会返回false</p>
+<p>函数也是一个对象，创建函数,用typeof检查函数的类型为function</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun = <span class="keyword">new</span> <span class="built_in">Function</span>();<span class="comment">//很少使用</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;<span class="comment">//函数声明</span></span><br><span class="line"><span class="comment">//注意区别 这里的add和add()</span></span><br><span class="line"><span class="comment">//add是函数的内容</span></span><br><span class="line"><span class="comment">//add()是函数返回值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>对象的属性值也可以是函数，一个函数成为了一个对象的属性值，那么称这个函数为对象的方法，调用函数时称为调用对象的方法</p>
+<p>枚举对象中的属性 for…in</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> 变量 <span class="keyword">in</span> 对象)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log( 变量 );<span class="comment">//对象里面有几个属性就执行几次循环体，且每次执行时都会将属性的名字赋值给变量</span></span><br><span class="line">  <span class="built_in">console</span>.log(obj[n]);<span class="comment">//obj是对象，n是变量，该语句输出对象的所有属性名，值得注意的是⚠️：变量不能用obj.变量来获取，而是[]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>作用域：全局作用域 与 函数作用域</p>
+<p>全局作用域在窗口打开时创建，在窗口关闭时关闭，全局作用域中有一个全局对象window，</p>
+<p>创建的全局变量都会保存在window的属性中，创建的函数都会作为window对象的方法保存</p>
+<p>变量的声明提前：使用var关键字声明函数会在所有代码执行前被声明，但是还没有赋值</p>
+<p>函数的声明提前：直接使用函数声明形式，会在所有代码执行前声明并赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种声明方式只能在函数被赋值之后调用函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;good&quot;</span>);<span class="comment">//这种函数可以被提前调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在函数中不使用声明定义的变量会成为全局变量，可以修改全局变量的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a  = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line">  a = <span class="number">20</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//此时a会输出20而不是10</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>定义形参就相当于在函数的作用域中声明了变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> e = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//如果function add(e) 此处相当于声明了一个变量e</span></span><br><span class="line">  <span class="built_in">console</span>.log(e);</span><br><span class="line">&#125;</span><br><span class="line">add() =&gt;<span class="number">10</span>;</span><br><span class="line">add(<span class="number">12</span>) =&gt;<span class="number">12</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>注意⚠️</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert (d);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="number">10</span>;<span class="comment">//结果会弹出undfined而不是10，var提前声明但不赋值，走到var = 10这时才给它赋值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>this</p>
+<p>解析在调用函数时每次都会向函数内部传递一个隐含参数，这个参数就是this，this指向的是一个对象，函数执行的上下文对象</p>
+<p>根据函数调用的方式不同，this将会指向不同的对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun();<span class="comment">//以函数形式调用，this指向window</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> Person();<span class="comment">//以构造函数调用时，this就是创建的新对象</span></span><br><span class="line">obj.myName();<span class="comment">//以方法形式调用，this指向调用方法的对象</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);<span class="comment">//this.name可以让程序更加灵活⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;tianyu&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&quot;jianjian&quot;</span>,</span><br><span class="line">  <span class="attr">sayName</span>:fun</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;mama&quot;</span>;</span><br><span class="line"></span><br><span class="line">fun();</span><br><span class="line">obj1.sayName();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>批量生产对象：该方法创建的对象都是Object类型，导致无法区分多个对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  obj.a = a;</span><br><span class="line">  obj.b = b;</span><br><span class="line">  obj.c = c;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj1 = createPerson(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj1);<span class="comment">//输出为&#123;a: &#x27;a&#x27;, b: &#x27;b&#x27;, c: &#x27;c&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>针对上面问题，我们可以创建构造函数，创建构造函数与普通函数没区别，首字母大写⚠️，只是调用方式不同</p>
+<p>普通函数是直接调用，构造函数则是使用new关键字进行调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = <span class="string">&quot;tianyu&quot;</span>;<span class="comment">//为obj1中添加属性及属性值，⚠️this指向obj1⚠️</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj1 = <span class="keyword">new</span> Person();<span class="comment">//obj1此时是个对象</span></span><br></pre></td></tr></table></figure>
+
+<p>构造函数创建后：</p>
+<ol>
+<li>立即创建一个新的对象</li>
+<li>将新建的对象设置为函数中this</li>
+<li>执行函数中的代码</li>
+<li>返回新建的对象</li>
+</ol>
+<p>对象 instanceof  构造函数 判断一个对象是否是一个类的实例，是则返回true 否则false</p>
+<p>原型prototype，我们所创建的每一个函数都会有一个隐含对象，如果普通函数调用propoto属性没有任何用，</p>
+<p>当函数以构造函数调用时它所创建的对象中都会有一个隐含属性，可以通过以下方式调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">add</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> mov1 = <span class="keyword">new</span> add();</span><br><span class="line"><span class="keyword">var</span> mov2 = <span class="keyword">new</span> add();<span class="comment">//构造函数创建对象</span></span><br><span class="line"><span class="built_in">console</span>.log( mov1.__proto__ == mov2.__proto__);<span class="comment">//__proto__来调用,返回的结果是true</span></span><br></pre></td></tr></table></figure>
+
+<p>原型对象就是一个公共的区域，所有的相同类的构造函数及实例都可以访问到该区域</p>
+<p>我们可以将实例所共有的属性设置到原型对象中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add.prototype.a = <span class="number">3</span>;<span class="comment">//接着上段代码，在add的原型对象中添加了一个属性a</span></span><br><span class="line">add.prototype.sayHello()&#123;</span><br><span class="line">  alert(<span class="string">&quot;hello&quot;</span>);<span class="comment">//在原型对象中添加方法</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"><a href="#我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype" class="headerlink" title="我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype"></a>我们访问一个对象的属性或者方法时，先在自身内部的搜寻该属性或方法，如果没有就访问公共区域prototype</h3><p>在检查一个对象里有没有某个属性时，我们有两种方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;name&quot;</span> <span class="keyword">in</span> add;<span class="comment">//检查对象自身以及⚠️原型对象中是否有该属性</span></span><br><span class="line">add.hasOwnProperty(<span class="string">&quot;name&quot;</span>);<span class="comment">//检查对象自身中是否有该属性</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/29/JS%E5%9F%BA%E7%A1%80/" data-id="ckx16buj50009xtdx0fjnelos" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
 
     </footer>
   </div>
@@ -1192,68 +1241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/" data-id="ckwzq2t1n0009i8dx3alog9vc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Javascript基础day2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/" class="article-date">
-  <time datetime="2021-11-29T07:56:36.000Z" itemprop="datePublished">2021-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/">Javascript基础--随机数，解构赋值</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Javascript基础day2"><a href="#Javascript基础day2" class="headerlink" title="Javascript基础day2"></a>Javascript基础day2</h1><ol>
-<li><p>产生随机数：Math.random 产生0到1的随机小数</p>
-<p>Math.floor向下取整，产生范围随机数方法：    </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random*(Max-Min+<span class="number">1</span>)+Min)<span class="comment">//产生min到max之间的随机整数</span></span><br></pre></td></tr></table></figure></li>
-<li><p>三元运算符：  a ? b : c</p>
-<p>a是判断条件</p>
-<p>b是a为真时做的操作</p>
-<p>c是a为错时做的操作</p>
-<p>可以叠加使用</p>
-</li>
-<li><p>const分配给变量的对象依旧是可以变的，只能防止重新分配</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> s = [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line">			s = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];<span class="comment">//无效</span></span><br><span class="line">			s[<span class="number">2</span>] = <span class="number">45</span>;<span class="comment">//操作有效改变</span></span><br></pre></td></tr></table></figure></li>
-<li><p>确保数据不会改变的函数 Object.freeze( 数据  );</p>
-</li>
-<li><p>箭头函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> magic = <span class="function">() =&gt;</span> <span class="keyword">new</span> Data();</span><br><span class="line"><span class="comment">//上下两个等效</span></span><br><span class="line"><span class="keyword">const</span> magic = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Data();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>contact函数连接数组，array1.contact(array2)，返回一个array1和array2相连的数组</p>
-</li>
-<li><p>展开操作符 …</p>
-</li>
-<li><p>解构赋值：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123; <span class="attr">name</span> : <span class="string">&quot;John&quot;</span>,<span class="attr">age</span> : <span class="number">34</span>&#125;</span><br><span class="line"><span class="keyword">const</span> name = user.name;</span><br><span class="line"><span class="keyword">const</span> age = user.age;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">const</span> &#123;name,age&#125; = user;</span><br><span class="line"><span class="keyword">const</span> &#123;userName,userAge&#125; =user;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/29/Javascript%E5%9F%BA%E7%A1%80day2/" data-id="ckwzq2t1p000ci8dx2zezdrpg" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/29/Javascript%20%E5%9F%BA%E7%A1%80day1/" data-id="ckx16buj7000cxtdx0v4787c3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li></ul>
@@ -1327,11 +1315,11 @@
           </li>
         
           <li>
-            <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
+            <a href="/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/">CSS新属性</a>
           </li>
         
           <li>
-            <a href="/2021/11/29/CSS3%E6%96%B0%E5%B1%9E%E6%80%A7/">CSS新属性</a>
+            <a href="/2021/11/29/CSS3%E5%8A%A8%E7%94%BB/">CSS动画</a>
           </li>
         
       </ul>
